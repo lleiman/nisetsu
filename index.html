@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NISETSU — 二節 · Hand-finished training nunchaku, made in editions of 120</title>
+<meta name="description" content="An atelier in Kyoto producing nunchaku as objects of focus. Smoked oak, hand-forged brass, hand-braided silk. Signed and numbered, editions of 120.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   DESIGN TOKENS — Noir palette
+   Entire page lives in dark. Rhythm is built through tonal
+   gradation of dark surfaces, not light/dark contrast.
+   Token names preserved from Atelier version for compatibility —
+   only values shift.
+   ============================================================ */
+:root {
+  /* Surfaces — tonal gradation in dark */
+  --bg: #1A1814;          /* Page base — deep warm ink */
+  --bg-soft: #221E18;     /* Slight raise — product image bg, spotlight section, journal section */
+  --bg-deeper: #2E2820;   /* More raised — article thumbnails, product hover */
+
+  /* Ink — parchment family on dark */
+  --ink: #EFEBE3;         /* Primary text — warm parchment */
+  --ink-muted: #B5AC9E;   /* Body copy on dark */
+  --ink-quiet: #8A8175;   /* Captions, micro labels */
+  --ink-faint: #5C5145;   /* Disabled / very low emphasis */
+
+  /* Rules — visible but subtle on dark */
+  --rule: #3A332B;
+  --rule-soft: #2E2820;
+
+  /* Accent — brightened to cinnabar/copper for legibility on dark */
+  --accent: #C9622E;
+  --accent-soft: #E07A48;
+
+  /* Deepest panels — for hero product photo, The Craft section, footer */
+  --dark: #0F0D0A;
+  --dark-soft: #1E1A14;
+  --dark-ink: #EFEBE3;
+  --dark-muted: #B5AC9E;
+  --dark-quiet: #8A8175;
+
+  /* Product material colors — warmed for visibility against dark surfaces */
+  --wood-kuro: #6B4F36;
+  --wood-shiro: #C9BFA8;
+  --wood-shu: #A53324;
+  --metal-brass: #D4AC6E;
+  --metal-silver: #D5D0C5;
+  --metal-blackened: #5C5045;
+
+  /* Type */
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --container: 1320px;
+  --gutter: 36px;
+  --section-pad: 112px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --gutter: 20px;
+    --section-pad: 64px;
+  }
+}
+
+/* ============================================================
+   RESET & GLOBAL
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; border: 0; background: none; cursor: pointer; color: inherit; }
+input { font: inherit; }
+
+/* ============================================================
+   TYPE UTILITIES
+   ============================================================ */
+.serif { font-family: var(--font-serif); font-weight: 300; letter-spacing: -0.008em; }
+.italic { font-style: italic; font-weight: 400; }
+
+.micro {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--ink-quiet);
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--ink);
+  transition: color 240ms ease;
+}
+.nav-link:hover { color: var(--accent); }
+
+.cta {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 400;
+  padding: 16px 32px;
+  background: var(--ink);
+  color: var(--bg);
+  transition: background 240ms ease;
+}
+.cta:hover { background: var(--accent); }
+
+.cta-text {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--ink);
+  border-bottom: 0.5px solid var(--ink);
+  padding-bottom: 6px;
+  transition: color 240ms ease, border-color 240ms ease;
+}
+.cta-text:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.rule {
+  height: 0.5px;
+  background: var(--rule);
+  border: 0;
+  margin: 0;
+}
+
+/* ============================================================
+   UTILITY BAR — top thin strip
+   ============================================================ */
+.utility {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px var(--gutter);
+  background: var(--bg);
+}
+.utility .micro { color: var(--ink-muted); }
+.utility .lang { display: flex; gap: 14px; }
+.utility .lang a { color: var(--ink-muted); transition: color 200ms ease; }
+.utility .lang a.active { color: var(--ink); }
+.utility .lang a:hover { color: var(--ink); }
+
+/* ============================================================
+   MAIN NAV — centered wordmark, balanced links
+   ============================================================ */
+.nav {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 26px var(--gutter) 28px;
+}
+.nav .left { display: flex; gap: 28px; }
+.nav .right { display: flex; gap: 28px; justify-content: flex-end; align-items: center; }
+.nav .wordmark { text-align: center; }
+.nav .wordmark .kanji {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  font-weight: 300;
+}
+.nav .wordmark .latin { margin-top: 5px; font-size: 9.5px; letter-spacing: 0.32em; }
+
+@media (max-width: 768px) {
+  .nav { grid-template-columns: auto 1fr auto; }
+  .nav .left, .nav .right { gap: 16px; }
+  .nav .left .nav-link:not(:first-child),
+  .nav .right .nav-link:not(:last-child) { display: none; }
+  .nav .wordmark .kanji { font-size: 26px; }
+}
+
+/* ============================================================
+   HERO — text left, dark product panel right
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 640px;
+}
+.hero__text {
+  padding: 88px 56px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero__text-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: 80px;
+  line-height: 1.02;
+  font-weight: 300;
+  letter-spacing: -0.018em;
+  margin: 32px 0 28px;
+}
+.hero__desc {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-muted);
+  max-width: 38ch;
+  margin-bottom: 40px;
+}
+.hero__actions { display: flex; gap: 18px; align-items: center; }
+.hero__bottom { margin-top: 48px; display: flex; justify-content: space-between; align-items: flex-end; }
+
+.hero__panel {
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 60px;
+}
+.hero__panel-caption-left {
+  position: absolute; bottom: 28px; left: 36px;
+  color: var(--dark-quiet);
+}
+.hero__panel-caption-right {
+  position: absolute; bottom: 28px; right: 36px;
+  color: var(--dark-quiet);
+}
+.hero__panel-edition {
+  position: absolute; top: 36px; right: 36px;
+  color: var(--dark-quiet);
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__text { padding: 56px var(--gutter) 48px; min-height: auto; }
+  .hero__title { font-size: 48px; margin: 24px 0 20px; }
+  .hero__panel { min-height: 440px; padding: 40px; }
+}
+
+/* ============================================================
+   MANIFESTO — large italic centered quote
+   ============================================================ */
+.manifesto {
+  padding: var(--section-pad) var(--gutter);
+  text-align: center;
+}
+.manifesto__quote {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.32;
+  max-width: 24ch;
+  margin: 0 auto;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.manifesto__quote::before { content: '“'; margin-right: 0.05em; }
+.manifesto__quote::after { content: '”'; margin-left: 0.05em; }
+.manifesto__attr { margin-top: 36px; color: var(--ink-quiet); }
+
+@media (max-width: 768px) {
+  .manifesto__quote { font-size: 28px; }
+}
+
+/* ============================================================
+   COLLECTION — 3 products in row, separated by hairlines
+   ============================================================ */
+.collection__head {
+  padding: 56px var(--gutter) 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.collection__head h2 {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: -0.005em;
+}
+.collection__head .meta { color: var(--ink-quiet); }
+
+.collection__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.product {
+  border-right: 0.5px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.product:last-child { border-right: 0; }
+.product__image {
+  background: var(--bg-soft);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: background 600ms ease;
+}
+.product:hover .product__image { background: var(--bg-deeper); }
+.product__image svg {
+  width: 32%;
+  height: auto;
+  transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product:hover .product__image svg { transform: scale(1.04); }
+.product__edition-tag {
+  position: absolute; top: 18px; left: 22px;
+  color: var(--ink-quiet);
+}
+.product__info {
+  padding: 26px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+.product__name {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 300;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+.product__name .kanji { font-size: 30px; }
+.product__name .romaji { font-style: italic; color: var(--ink-muted); }
+.product__materials {
+  font-size: 12px;
+  color: var(--ink-muted);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.product__bottom {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 14px;
+  border-top: 0.5px solid var(--rule-soft);
+}
+.product__price {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+}
+.product__view {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-quiet);
+  transition: color 240ms ease;
+}
+.product:hover .product__view { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .collection__grid { grid-template-columns: 1fr; }
+  .product { border-right: 0; border-bottom: 0.5px solid var(--rule); }
+  .product:last-child { border-bottom: 0; }
+}
+
+/* ============================================================
+   SPOTLIGHT — featured Kuro, full-bleed band
+   ============================================================ */
+.spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-soft);
+}
+.spotlight__image {
+  background: var(--dark);
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 80px;
+}
+.spotlight__caption {
+  position: absolute;
+  bottom: 36px; left: 40px;
+  color: var(--dark-quiet);
+}
+.spotlight__signature {
+  position: absolute;
+  top: 36px; right: 40px;
+  color: var(--dark-quiet);
+  text-align: right;
+}
+.spotlight__text {
+  padding: 96px 72px 96px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.spotlight__label { color: var(--accent); }
+.spotlight__title {
+  font-family: var(--font-serif);
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+.spotlight__body {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--ink-muted);
+  max-width: 44ch;
+}
+.spotlight__details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  margin-top: 20px;
+  padding-top: 28px;
+  border-top: 0.5px solid var(--rule);
+}
+.spotlight__detail-label { color: var(--ink-quiet); margin-bottom: 4px; }
+.spotlight__detail-value { font-family: var(--font-serif); font-size: 19px; font-weight: 400; }
+.spotlight__actions { display: flex; gap: 24px; align-items: center; margin-top: 28px; }
+
+@media (max-width: 900px) {
+  .spotlight { grid-template-columns: 1fr; }
+  .spotlight__image { min-height: 480px; padding: 40px; }
+  .spotlight__text { padding: 56px var(--gutter); }
+  .spotlight__title { font-size: 36px; }
+}
+
+/* ============================================================
+   CRAFT — dark section with material breakdown
+   ============================================================ */
+.craft {
+  background: var(--dark);
+  color: var(--dark-ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.craft__intro {
+  padding: 112px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 520px;
+  border-right: 0.5px solid var(--dark-soft);
+}
+.craft__intro .micro { color: var(--dark-quiet); }
+.craft__intro-title {
+  font-family: var(--font-serif);
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--dark-ink);
+  margin: 28px 0 32px;
+}
+.craft__intro-body {
+  font-size: 14.5px;
+  line-height: 1.85;
+  color: var(--dark-muted);
+  max-width: 42ch;
+}
+.craft__intro-master {
+  margin-top: auto;
+  padding-top: 40px;
+  color: var(--dark-quiet);
+}
+.craft__materials {
+  padding: 112px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 36px;
+}
+.craft__material {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 32px;
+  align-items: baseline;
+}
+.craft__material-num {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 300;
+  color: var(--dark-quiet);
+  font-style: italic;
+}
+.craft__material-name {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: var(--dark-ink);
+}
+.craft__material-desc {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--dark-muted);
+}
+.craft__material-divider {
+  height: 0.5px;
+  background: var(--dark-soft);
+  border: 0;
+  grid-column: 1 / -1;
+  margin: 16px 0 0;
+}
+.craft__material:last-child .craft__material-divider { display: none; }
+
+@media (max-width: 900px) {
+  .craft { grid-template-columns: 1fr; }
+  .craft__intro, .craft__materials { padding: 64px var(--gutter); min-height: auto; }
+  .craft__intro { border-right: 0; border-bottom: 0.5px solid var(--dark-soft); }
+  .craft__intro-title { font-size: 36px; }
+}
+
+/* ============================================================
+   MASTER — editorial: portrait area + biography
+   ============================================================ */
+.master {
+  padding: var(--section-pad) var(--gutter);
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.master__grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 80px;
+  align-items: start;
+}
+.master__portrait {
+  background: var(--bg-soft);
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-quiet);
+}
+.master__text { padding: 24px 0; }
+.master__label { color: var(--accent); }
+.master__name {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+  margin: 24px 0 32px;
+}
+.master__name .it { font-style: italic; }
+.master__bio p { margin-bottom: 20px; color: var(--ink-muted); font-size: 14.5px; line-height: 1.85; max-width: 50ch; }
+.master__quote {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--ink);
+  padding: 28px 0 28px 32px;
+  border-left: 0.5px solid var(--accent);
+  margin: 32px 0;
+  max-width: 36ch;
+}
+.master__seal { margin-top: 40px; display: flex; gap: 24px; align-items: center; color: var(--ink-quiet); }
+.master__seal svg { width: 48px; height: 48px; }
+
+@media (max-width: 900px) {
+  .master__grid { grid-template-columns: 1fr; gap: 40px; }
+  .master__name { font-size: 36px; }
+}
+
+/* ============================================================
+   JOURNAL TEASER — 3 article cards
+   ============================================================ */
+.journal {
+  padding: var(--section-pad) 0;
+  background: var(--bg-soft);
+}
+.journal__head {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.journal__head h2 {
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: -0.012em;
+}
+.journal__grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+.article__thumb {
+  background: var(--bg-deeper);
+  aspect-ratio: 4 / 3;
+  margin-bottom: 24px;
+  transition: opacity 400ms ease;
+}
+.article:hover .article__thumb { opacity: 0.85; }
+.article__meta { display: flex; gap: 18px; margin-bottom: 14px; }
+.article__cat { color: var(--accent); }
+.article__date { color: var(--ink-quiet); }
+.article__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  margin-bottom: 12px;
+}
+.article__excerpt { font-size: 13.5px; color: var(--ink-muted); line-height: 1.75; }
+
+@media (max-width: 900px) {
+  .journal__grid { grid-template-columns: 1fr; gap: 56px; }
+  .journal__head h2 { font-size: 30px; }
+}
+
+/* ============================================================
+   NEWSLETTER — "The Letter"
+   ============================================================ */
+.newsletter {
+  padding: var(--section-pad) var(--gutter);
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.newsletter__left h2 {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+  margin-top: 16px;
+}
+.newsletter__right p { color: var(--ink-muted); margin-bottom: 24px; max-width: 42ch; }
+.newsletter__form {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid var(--ink);
+  padding-bottom: 12px;
+}
+.newsletter__form input {
+  flex: 1;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 14px;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  letter-spacing: 0.01em;
+  padding: 8px 0;
+}
+.newsletter__form input::placeholder { color: var(--ink-quiet); font-style: italic; font-family: var(--font-serif); font-size: 16px; }
+.newsletter__form button {
+  font-size: 10.5px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color 240ms ease;
+}
+.newsletter__form button:hover { color: var(--accent); }
+.newsletter__note { margin-top: 18px; color: var(--ink-quiet); }
+
+@media (max-width: 900px) {
+  .newsletter { grid-template-columns: 1fr; gap: 40px; }
+  .newsletter__left h2 { font-size: 28px; }
+}
+
+/* ============================================================
+   FOOTER — dark, 4 columns + bottom strip
+   ============================================================ */
+.footer {
+  background: var(--dark);
+  color: var(--dark-muted);
+  padding: 80px 0 32px;
+}
+.footer__grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: 2.4fr 1fr 1fr 1fr 1.2fr;
+  gap: 40px;
+}
+.footer__brand .kanji {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  letter-spacing: 0.08em;
+  color: var(--dark-ink);
+  line-height: 1;
+}
+.footer__brand .latin { margin-top: 8px; color: var(--dark-quiet); font-size: 9.5px; letter-spacing: 0.32em; }
+.footer__brand p { margin-top: 24px; font-size: 12.5px; line-height: 1.7; color: var(--dark-muted); max-width: 30ch; }
+.footer__col-title { color: var(--dark-ink); margin-bottom: 18px; font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase; }
+.footer__col a {
+  display: block;
+  font-size: 12.5px;
+  line-height: 2;
+  color: var(--dark-muted);
+  transition: color 240ms ease;
+}
+.footer__col a:hover { color: var(--dark-ink); }
+.footer__social { display: flex; gap: 14px; margin-top: 8px; }
+.footer__bottom {
+  max-width: var(--container);
+  margin: 56px auto 0;
+  padding: 24px var(--gutter) 0;
+  border-top: 0.5px solid var(--dark-soft);
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--dark-quiet);
+}
+.footer__bottom-links { display: flex; gap: 24px; }
+.footer__bottom-links a { color: var(--dark-quiet); transition: color 240ms ease; }
+.footer__bottom-links a:hover { color: var(--dark-ink); }
+
+@media (max-width: 900px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .footer__brand { grid-column: 1 / -1; }
+  .footer__bottom { flex-direction: column; gap: 16px; }
+}
+
+/* ============================================================
+   ENTRANCE ANIMATION — staggered fade-up on first load
+   Replace with intersection observer triggers for full site
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero__text-top, .hero__title, .hero__desc, .hero__actions, .hero__bottom {
+  opacity: 0;
+  animation: fadeUp 900ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero__text-top { animation-delay: 100ms; }
+.hero__title { animation-delay: 220ms; }
+.hero__desc { animation-delay: 340ms; }
+.hero__actions { animation-delay: 460ms; }
+.hero__bottom { animation-delay: 580ms; }
+
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     UTILITY BAR
+     ============================================================ -->
+<div class="utility">
+  <span class="micro">Complimentary worldwide shipping on editions above $1,500</span>
+  <div class="lang">
+    <a href="#" class="micro active">EN</a>
+    <a href="#" class="micro">JP</a>
+    <a href="#" class="micro">中文</a>
+  </div>
+</div>
+<hr class="rule">
+
+<!-- ============================================================
+     MAIN NAV — centered wordmark
+     ============================================================ -->
+<nav class="nav">
+  <div class="left">
+    <a href="/collection" class="nav-link">Collection</a>
+    <a href="/craft" class="nav-link">Craft</a>
+    <a href="/dojo" class="nav-link">Dojo</a>
+    <a href="/journal" class="nav-link">Journal</a>
+  </div>
+  <a href="/" class="wordmark">
+    <div class="kanji">二節</div>
+    <div class="micro latin">NISETSU · EST. 2026</div>
+  </a>
+  <div class="right">
+    <a href="/search" class="nav-link">Search</a>
+    <a href="/account" class="nav-link">Account</a>
+    <a href="/cart" class="nav-link">Cart <span style="color: var(--ink-quiet);">(0)</span></a>
+  </div>
+</nav>
+<hr class="rule">
+
+<!-- ============================================================
+     HERO
+     TODO: Replace right-panel SVG with a single 4:5 product photograph,
+     2400 × 3000px minimum, shot on warm linen against deep ink backdrop,
+     side-lit from window light. Maintain 60px breathing space around object.
+     ============================================================ -->
+<section class="hero">
+  <div class="hero__text">
+    <div class="hero__text-top">
+      <span class="micro">No. 001 — Inaugural release</span>
+      <span class="micro">Edition of 120</span>
+    </div>
+    <div>
+      <h1 class="hero__title">
+        Two sections.<br>
+        <span class="italic">One discipline.</span>
+      </h1>
+      <p class="hero__desc">
+        Hand-finished training nunchaku, produced in editions of 120.
+        Smoked oak, hand-forged brass, hand-braided silk cord.
+        Each pair signed, numbered, and accompanied by a vegetable-tanned leather case.
+      </p>
+      <div class="hero__actions">
+        <a href="/collection" class="cta">Discover the collection &nbsp;→</a>
+        <a href="/craft" class="cta-text">On the craft</a>
+      </div>
+    </div>
+    <div class="hero__bottom">
+      <span class="micro">Atelier · Kyoto &nbsp;—&nbsp; Studio · Manila</span>
+      <span class="micro">Scroll &nbsp;↓</span>
+    </div>
+  </div>
+  <div class="hero__panel">
+    <!-- Hero product silhouette. In production: studio photograph of the Kuro pair, hanging vertically from a brass hook against deep ink linen. -->
+    <svg viewBox="0 0 200 380" style="width: 42%; height: auto;" aria-hidden="true">
+      <rect x="56" y="20" width="22" height="280" rx="11" fill="var(--wood-kuro)"/>
+      <rect x="56" y="38" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="56" y="284" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="56" y="296" width="22" height="5" fill="var(--metal-brass)"/>
+      <rect x="122" y="74" width="22" height="280" rx="11" fill="var(--wood-kuro)"/>
+      <rect x="122" y="92" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="122" y="338" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="122" y="74" width="22" height="5" fill="var(--metal-brass)"/>
+      <g fill="none" stroke="var(--metal-brass)" stroke-width="1.8">
+        <ellipse cx="82" cy="26" rx="5" ry="3"/>
+        <ellipse cx="90" cy="35" rx="3" ry="5"/>
+        <ellipse cx="100" cy="45" rx="5" ry="3"/>
+        <ellipse cx="110" cy="55" rx="3" ry="5"/>
+        <ellipse cx="120" cy="65" rx="5" ry="3"/>
+      </g>
+    </svg>
+    <span class="micro hero__panel-edition">
+      The Kuro pair<br>
+      <span style="color: var(--dark-muted);">112 / 120</span>
+    </span>
+    <span class="micro hero__panel-caption-left">Fig. 01 · Smoked oak, brass</span>
+    <span class="micro hero__panel-caption-right">$ 1,480</span>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     MANIFESTO — large italic centered statement
+     ============================================================ -->
+<section class="manifesto">
+  <p class="manifesto__quote serif italic">
+    An object made not to be wielded often,<br>
+    but to be returned to.
+  </p>
+  <div class="micro manifesto__attr">From the atelier notebook · Kyoto, March 2026</div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     COLLECTION — 3 products
+     ============================================================ -->
+<section>
+  <div class="collection__head">
+    <h2 class="serif">The Collection</h2>
+    <a href="/collection" class="cta-text">View all editions →</a>
+  </div>
+  <hr class="rule">
+  <div class="collection__grid">
+
+    <article class="product">
+      <a href="/products/kuro" style="display: contents;">
+        <div class="product__image">
+          <span class="micro product__edition-tag">No. 001 · 黒</span>
+          <!-- TODO: Replace with photographed product on linen, 4:5 -->
+          <svg viewBox="0 0 120 220" aria-hidden="true">
+            <rect x="32" y="14" width="16" height="170" rx="8" fill="var(--wood-kuro)"/>
+            <rect x="32" y="28" width="16" height="2" fill="var(--metal-brass)"/>
+            <rect x="32" y="172" width="16" height="2" fill="var(--metal-brass)"/>
+            <rect x="72" y="40" width="16" height="170" rx="8" fill="var(--wood-kuro)"/>
+            <rect x="72" y="54" width="16" height="2" fill="var(--metal-brass)"/>
+            <rect x="72" y="198" width="16" height="2" fill="var(--metal-brass)"/>
+            <g fill="none" stroke="var(--metal-brass)" stroke-width="1.4">
+              <ellipse cx="52" cy="18" rx="4" ry="2.4"/>
+              <ellipse cx="60" cy="26" rx="2.4" ry="4"/>
+              <ellipse cx="68" cy="34" rx="4" ry="2.4"/>
+              <ellipse cx="76" cy="42" rx="2.4" ry="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="product__info">
+          <div class="product__name">
+            <span class="kanji">黒</span><span class="romaji">Kuro</span>
+          </div>
+          <div class="product__materials">Smoked oak · hand-forged brass<br>Braided black silk cord</div>
+          <div class="product__bottom">
+            <span class="product__price">$1,480</span>
+            <span class="product__view">View →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="product">
+      <a href="/products/shiro" style="display: contents;">
+        <div class="product__image">
+          <span class="micro product__edition-tag">No. 002 · 白</span>
+          <svg viewBox="0 0 120 220" aria-hidden="true">
+            <rect x="32" y="14" width="16" height="170" rx="8" fill="var(--wood-shiro)"/>
+            <rect x="32" y="28" width="16" height="2" fill="var(--metal-silver)"/>
+            <rect x="32" y="172" width="16" height="2" fill="var(--metal-silver)"/>
+            <rect x="72" y="40" width="16" height="170" rx="8" fill="var(--wood-shiro)"/>
+            <rect x="72" y="54" width="16" height="2" fill="var(--metal-silver)"/>
+            <rect x="72" y="198" width="16" height="2" fill="var(--metal-silver)"/>
+            <g fill="none" stroke="var(--metal-silver)" stroke-width="1.4">
+              <ellipse cx="52" cy="18" rx="4" ry="2.4"/>
+              <ellipse cx="60" cy="26" rx="2.4" ry="4"/>
+              <ellipse cx="68" cy="34" rx="4" ry="2.4"/>
+              <ellipse cx="76" cy="42" rx="2.4" ry="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="product__info">
+          <div class="product__name">
+            <span class="kanji">白</span><span class="romaji">Shiro</span>
+          </div>
+          <div class="product__materials">Bleached ash · sterling silver collars<br>Ivory silk cord</div>
+          <div class="product__bottom">
+            <span class="product__price">$1,720</span>
+            <span class="product__view">View →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="product">
+      <a href="/products/shu" style="display: contents;">
+        <div class="product__image">
+          <span class="micro product__edition-tag">No. 003 · 朱</span>
+          <svg viewBox="0 0 120 220" aria-hidden="true">
+            <rect x="32" y="14" width="16" height="170" rx="8" fill="var(--wood-shu)"/>
+            <rect x="32" y="28" width="16" height="2" fill="var(--metal-blackened)"/>
+            <rect x="32" y="172" width="16" height="2" fill="var(--metal-blackened)"/>
+            <rect x="72" y="40" width="16" height="170" rx="8" fill="var(--wood-shu)"/>
+            <rect x="72" y="54" width="16" height="2" fill="var(--metal-blackened)"/>
+            <rect x="72" y="198" width="16" height="2" fill="var(--metal-blackened)"/>
+            <g fill="none" stroke="var(--metal-blackened)" stroke-width="1.4">
+              <ellipse cx="52" cy="18" rx="4" ry="2.4"/>
+              <ellipse cx="60" cy="26" rx="2.4" ry="4"/>
+              <ellipse cx="68" cy="34" rx="4" ry="2.4"/>
+              <ellipse cx="76" cy="42" rx="2.4" ry="4"/>
+            </g>
+          </svg>
+        </div>
+        <div class="product__info">
+          <div class="product__name">
+            <span class="kanji">朱</span><span class="romaji">Shu</span>
+          </div>
+          <div class="product__materials">Bloodwood · blackened steel<br>Oxblood kangaroo leather lacing</div>
+          <div class="product__bottom">
+            <span class="product__price">$1,940</span>
+            <span class="product__view">View →</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     SPOTLIGHT — featured Kuro
+     ============================================================ -->
+<section class="spotlight">
+  <div class="spotlight__image">
+    <svg viewBox="0 0 220 400" style="width: 38%; height: auto;" aria-hidden="true">
+      <rect x="64" y="22" width="22" height="300" rx="11" fill="var(--wood-kuro)"/>
+      <rect x="64" y="40" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="64" y="304" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="64" y="316" width="22" height="5" fill="var(--metal-brass)"/>
+      <rect x="134" y="80" width="22" height="300" rx="11" fill="var(--wood-kuro)"/>
+      <rect x="134" y="98" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="134" y="360" width="22" height="2.5" fill="var(--metal-brass)"/>
+      <rect x="134" y="80" width="22" height="5" fill="var(--metal-brass)"/>
+      <g fill="none" stroke="var(--metal-brass)" stroke-width="1.8">
+        <ellipse cx="92" cy="28" rx="5" ry="3"/>
+        <ellipse cx="100" cy="37" rx="3" ry="5"/>
+        <ellipse cx="110" cy="47" rx="5" ry="3"/>
+        <ellipse cx="120" cy="57" rx="3" ry="5"/>
+        <ellipse cx="132" cy="69" rx="5" ry="3"/>
+      </g>
+    </svg>
+    <span class="micro spotlight__caption">Fig. 02 · Smoked oak, view from above</span>
+    <span class="micro spotlight__signature">黒 · KURO · 002 of 120<br>signed Hashimoto</span>
+  </div>
+  <div class="spotlight__text">
+    <span class="micro spotlight__label">Spotlight — 黒 Kuro</span>
+    <h2 class="spotlight__title">
+      Smoked for eight weeks,<br>
+      <span class="italic">returned to oil.</span>
+    </h2>
+    <p class="spotlight__body">
+      The Kuro pair begins as quarter-sawn oak from a single tree felled in Tohoku.
+      Eight weeks suspended above white-oak smoke darken the wood from the inside;
+      the grain remains visible but recedes. Two further weeks soaking in tung oil
+      bring the surface back to a soft, almost organic warmth.
+    </p>
+    <p class="spotlight__body">
+      Each pair takes 184 hours of work, end to end. The brass is forged in a small
+      smithy outside Otsu, then hand-fitted and burnished.
+    </p>
+    <div class="spotlight__details">
+      <div>
+        <div class="micro spotlight__detail-label">Length</div>
+        <div class="spotlight__detail-value">30 cm per section</div>
+      </div>
+      <div>
+        <div class="micro spotlight__detail-label">Weight</div>
+        <div class="spotlight__detail-value">340 g, balanced</div>
+      </div>
+      <div>
+        <div class="micro spotlight__detail-label">Cord</div>
+        <div class="spotlight__detail-value">Hand-braided silk</div>
+      </div>
+      <div>
+        <div class="micro spotlight__detail-label">Finish</div>
+        <div class="spotlight__detail-value">Smoked, oiled, signed</div>
+      </div>
+    </div>
+    <div class="spotlight__actions">
+      <a href="/products/kuro" class="cta">Acquire — $1,480</a>
+      <a href="/products/kuro" class="cta-text">Full specifications →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CRAFT — dark section
+     ============================================================ -->
+<section class="craft">
+  <div class="craft__intro">
+    <span class="micro">02 — The craft</span>
+    <div>
+      <h2 class="craft__intro-title">
+        Six months,<br>
+        <span class="italic">by two hands.</span>
+      </h2>
+      <p class="craft__intro-body">
+        Every pair is finished by a single craftsman in our Kyoto atelier.
+        Wood is smoked for eight weeks before turning. Brass is forged, not cast.
+        Cord is hand-braided from Japanese silk and reinforced with an aramid core —
+        the only modern intrusion, and a necessary one.
+      </p>
+    </div>
+    <div class="micro craft__intro-master">Master &nbsp;—&nbsp; Tarō Hashimoto, since 1998</div>
+  </div>
+
+  <div class="craft__materials">
+
+    <div class="craft__material">
+      <div class="craft__material-num serif italic">i.</div>
+      <div>
+        <div class="craft__material-name">Wood</div>
+        <p class="craft__material-desc">
+          Selected from Tohoku oak and Cotswold ash. Air-dried for two seasons,
+          smoked over white-oak chips for eight weeks, then turned by hand on a
+          treadle lathe and finished with tung oil.
+        </p>
+      </div>
+      <hr class="craft__material-divider">
+    </div>
+
+    <div class="craft__material">
+      <div class="craft__material-num serif italic">ii.</div>
+      <div>
+        <div class="craft__material-name">Metal</div>
+        <p class="craft__material-desc">
+          Brass, sterling silver, or blackened steel — sand-cast in Otsu,
+          forged by hand, finished to a soft satin patina that deepens with use.
+          Each collar is hand-fitted to its specific stick.
+        </p>
+      </div>
+      <hr class="craft__material-divider">
+    </div>
+
+    <div class="craft__material">
+      <div class="craft__material-num serif italic">iii.</div>
+      <div>
+        <div class="craft__material-name">Cord</div>
+        <p class="craft__material-desc">
+          Japanese silk in a twelve-strand braid, with a hidden aramid core.
+          The result is supple to the hand, silent in motion, and rated to a
+          working load well beyond what any practitioner will ever apply.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MASTER — editorial: portrait + biography
+     ============================================================ -->
+<section class="master">
+  <div class="master__grid">
+
+    <!-- TODO: Replace with portrait photograph of the master at work, 3:4 -->
+    <div class="master__portrait">
+      <svg viewBox="0 0 200 270" style="width: 36%; opacity: 0.4;" aria-hidden="true">
+        <circle cx="100" cy="85" r="44" fill="none" stroke="currentColor" stroke-width="0.5"/>
+        <path d="M40 250 Q40 160 100 158 Q160 160 160 250" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      </svg>
+    </div>
+
+    <div class="master__text">
+      <span class="micro master__label">03 — The master</span>
+      <h2 class="master__name">
+        Tarō Hashimoto<br>
+        has finished <span class="it">every pair.</span>
+      </h2>
+      <div class="master__bio">
+        <p>
+          Born in Nara in 1968, Tarō trained under his grandfather — a maker of
+          traditional Japanese garden tools — before working for fourteen years in
+          a single-room workshop in Otsu producing scabbards for Bizen sword smiths.
+        </p>
+        <p>
+          He began making nunchaku at the request of a single practitioner in 1998.
+          Word spread quietly. He has produced fewer than four hundred pairs in his
+          career, and signs every piece with a small cinnabar seal applied to the
+          inner face of the longer stick.
+        </p>
+      </div>
+      <p class="master__quote">
+        “The pair should ask nothing of you. If you have to think about its weight,
+        I have failed.”
+      </p>
+      <div class="master__seal">
+        <svg viewBox="0 0 48 48" aria-hidden="true">
+          <rect x="2" y="2" width="44" height="44" fill="var(--accent)"/>
+          <text x="24" y="32" text-anchor="middle" fill="#EFEBE3" font-family="serif" font-size="22" font-weight="500">橋</text>
+        </svg>
+        <span class="micro">Signature of the master · applied to every pair</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     JOURNAL — 3 article teasers
+     ============================================================ -->
+<section class="journal">
+  <div class="journal__head">
+    <h2>From the atelier</h2>
+    <a href="/journal" class="cta-text">All entries →</a>
+  </div>
+  <div class="journal__grid">
+
+    <article class="article">
+      <div class="article__thumb"></div>
+      <div class="article__meta">
+        <span class="micro article__cat">Atelier letter</span>
+        <span class="micro article__date">04 · 2026</span>
+      </div>
+      <h3 class="article__title">On weight, and the body that learns it</h3>
+      <p class="article__excerpt">
+        Why an extra fifteen grams in the wrong section will be felt for years —
+        and how we test for it in the workshop.
+      </p>
+    </article>
+
+    <article class="article">
+      <div class="article__thumb"></div>
+      <div class="article__meta">
+        <span class="micro article__cat">Materials</span>
+        <span class="micro article__date">03 · 2026</span>
+      </div>
+      <h3 class="article__title">Why we forge brass, instead of casting</h3>
+      <p class="article__excerpt">
+        A short defence of the longer, more difficult way — and what it gives back
+        in the hand of the practitioner.
+      </p>
+    </article>
+
+    <article class="article">
+      <div class="article__thumb"></div>
+      <div class="article__meta">
+        <span class="micro article__cat">On form</span>
+        <span class="micro article__date">02 · 2026</span>
+      </div>
+      <h3 class="article__title">The katasumi method · a brief history</h3>
+      <p class="article__excerpt">
+        Notes on a quiet lineage of Okinawan training, and the object it
+        eventually produced.
+      </p>
+    </article>
+
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     NEWSLETTER — The Letter
+     ============================================================ -->
+<section class="newsletter">
+  <div class="newsletter__left">
+    <span class="micro">The Letter — four times a year</span>
+    <h2>
+      A quiet dispatch on craft, slowness,<br>
+      <span class="italic">and the body returning to itself.</span>
+    </h2>
+  </div>
+  <div class="newsletter__right">
+    <p>
+      Sent four times a year by the atelier. New editions, atelier notes,
+      occasional essays. No promotions, no marketing language.
+    </p>
+    <form class="newsletter__form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="Your address" required>
+      <button type="submit">Subscribe &nbsp;→</button>
+    </form>
+    <p class="micro newsletter__note">We never share your address. Unsubscribe with a single tap.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer__grid">
+
+    <div class="footer__brand">
+      <div class="kanji">二節 &nbsp; NISETSU</div>
+      <div class="latin">EST. 2026 · KYOTO</div>
+      <p>
+        An atelier for hand-made training nunchaku, in editions of 120.
+        Kyoto · Manila · Berlin.
+      </p>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__col-title">Shop</div>
+      <a href="/collection">The collection</a>
+      <a href="/editions">Editions</a>
+      <a href="/cases">Leather cases</a>
+      <a href="/stockists">Stockists</a>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__col-title">Atelier</div>
+      <a href="/craft">Our craft</a>
+      <a href="/master">The master</a>
+      <a href="/journal">Journal</a>
+      <a href="/letter">The Letter</a>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__col-title">Service</div>
+      <a href="/care">Care &amp; repair</a>
+      <a href="/shipping">Shipping</a>
+      <a href="/returns">Returns</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <div class="footer__col">
+      <div class="footer__col-title">Follow</div>
+      <a href="https://instagram.com/nisetsu">Instagram</a>
+      <a href="https://t.me/nisetsu">Telegram</a>
+      <a href="https://vimeo.com/nisetsu">Vimeo</a>
+    </div>
+
+  </div>
+  <div class="footer__bottom">
+    <span>© NISETSU 2026 · Made by hand in Kyoto</span>
+    <div class="footer__bottom-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/imprint">Imprint</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
