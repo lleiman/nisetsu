@@ -129,10 +129,9 @@ app.use('/uploads', express.static(UPLOADS_DIR, {
 
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: '1h' }));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-app.get('/index.html', (req, res) => {
+// Catch-all: any non-API, non-static GET returns the landing page.
+// Prevents "Cannot GET /products/kuro" — all routes resolve client-side.
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 

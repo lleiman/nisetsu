@@ -227,7 +227,19 @@
       el.addEventListener('click', onImageClick);
     });
 
+    // Block all link navigation while editing (pointer-events:none on <a>
+    // doesn't stop propagation from children with pointer-events:auto)
+    document.addEventListener('click', blockLinks, true);
+
     buildToolbar();
+  }
+
+  function blockLinks(e) {
+    if (!editMode) return;
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    if (link.closest('.nisetsu-edit-toolbar')) return;
+    e.preventDefault();
   }
 
   function exitEditMode(silent = false) {
@@ -245,6 +257,7 @@
     document.querySelectorAll('[data-nedit-image]').forEach((el) => {
       el.removeEventListener('click', onImageClick);
     });
+    document.removeEventListener('click', blockLinks, true);
 
     const bar = document.querySelector('.nisetsu-edit-toolbar');
     if (bar) bar.remove();
@@ -269,6 +282,8 @@
   }
 
   function onImageClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
     const slot = e.currentTarget;
     const input = document.createElement('input');
     input.type = 'file';
