@@ -1,13 +1,14 @@
 {
   "name": "nisetsu",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "NISETSU — 二節 · Hand-finished training nunchaku, made in editions of 120",
   "scripts": {
-    "start": "serve -s . -l tcp://0.0.0.0:${PORT:-3000} --no-clipboard --no-port-switching"
+    "start": "node server.js"
   },
   "dependencies": {
-    "serve": "^14.2.4"
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
   },
   "engines": {
     "node": ">=18"
