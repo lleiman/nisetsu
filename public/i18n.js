@@ -855,6 +855,187 @@
       en: 'View the collection →', ru: 'Смотреть коллекцию →',
       zh: '查看系列 →', ja: 'コレクションを見る →', id: 'Lihat koleksi →',
     },
+
+    /* ================================================================
+       KUSARI · COMBAT SERIES
+       ================================================================ */
+
+    'specs.kusari.label': {
+      en: '05 — Combat series · 鎖 Kusari', ru: '05 — Боевая серия · 鎖 Кусари',
+      zh: '05 — 实战系列 · 鎖 锁', ja: '05 — 実戦シリーズ · 鎖', id: '05 — Seri tempur · 鎖 Kusari',
+    },
+    'specs.kusari.title': {
+      en: 'The chain<br><span class="italic">changes everything.</span>',
+      ru: 'Цепь<br><span class="italic">меняет всё.</span>',
+      zh: '链条<br><span class="italic">改变一切。</span>',
+      ja: '鎖が<br><span class="italic">すべてを変える。</span>',
+      id: 'Rantai<br><span class="italic">mengubah segalanya.</span>',
+    },
+    'specs.kusari.subtitle': {
+      en: 'Cord absorbs. Chain transmits. The kusari series is built for practitioners who train in Okinawan kobudo and classical combat forms — where the weapon is expected to strike, not merely to flow. Every parameter shifts to accommodate the physics of a rigid metal connector.',
+      ru: 'Шнур поглощает. Цепь передаёт. Серия кусари создана для практикующих окинавское кобудо и классические боевые формы — где оружие должно наносить удар, а не просто течь. Каждый параметр смещён под физику жёсткого металлического соединения.',
+      zh: '绳吸收，链传导。锁系列为修习冲绳古武道和古典实战形式的习练者而造——在这些形式中，兵器应当击打，而非仅仅流动。每一个参数都因刚性金属连接件的物理特性而改变。',
+      ja: '紐は吸収する。鎖は伝達する。鎖シリーズは沖縄古武道と古典的な実戦型を稽古する者のために作られた——武器が流れるだけでなく、打つことを求められる場所のために。すべてのパラメータが剛体金属コネクタの物理に合わせてシフトする。',
+      id: 'Tali menyerap. Rantai mentransmisikan. Seri kusari dibangun untuk praktisi yang berlatih kobudo Okinawa dan bentuk tempur klasik — di mana senjata diharapkan memukul, bukan sekadar mengalir. Setiap parameter bergeser untuk mengakomodasi fisika konektor logam rigid.',
+    },
+    'specs.kusari.dims': {
+      en: 'Kusari dimensions', ru: 'Размеры кусари', zh: '锁系列尺寸', ja: '鎖の寸法', id: 'Dimensi kusari',
+    },
+    'specs.kusari.handle.label': { en: 'Handle length', ru: 'Длина рукояти', zh: '柄长', ja: '柄の長さ', id: 'Panjang gagang' },
+    'specs.kusari.handle.note': {
+      en: '2 cm shorter than the himo series. Chain nunchaku rotate faster due to reduced friction at the connector — the shorter handle compensates by lowering the moment of inertia, preventing the arc from becoming uncontrollable. The 28 cm dimension is the traditional Okinawan competition standard (shinai-length rule).',
+      ru: 'На 2 см короче серии химо. Цепные нунчаку вращаются быстрее из-за меньшего трения в соединении — короткая рукоять компенсирует это, снижая момент инерции и предотвращая неконтролируемую дугу. 28 см — традиционный окинавский соревновательный стандарт (правило длины синай).',
+      zh: '比绳系列短2厘米。链式双节棍因连接处摩擦减少而旋转更快——较短的手柄通过降低转动惯量来补偿，防止弧线失控。28厘米是传统冲绳竞赛标准（竹刀长度法则）。',
+      ja: '紐シリーズより2 cm短い。鎖ヌンチャクはコネクタの摩擦低減により回転が速い——短い柄は慣性モーメントを下げて弧が制御不能になるのを防ぐ。28 cmは沖縄の伝統的な競技基準（竹刀の長さの法則）。',
+      id: '2 cm lebih pendek dari seri himo. Nunchaku rantai berputar lebih cepat karena gesekan berkurang di konektor — gagang lebih pendek mengkompensasi dengan menurunkan momen inersia, mencegah lengkungan menjadi tak terkendali. Dimensi 28 cm adalah standar kompetisi tradisional Okinawa (aturan panjang shinai).',
+    },
+    'specs.kusari.chain.label': { en: 'Chain length', ru: 'Длина цепи', zh: '链长', ja: '鎖の長さ', id: 'Panjang rantai' },
+    'specs.kusari.chain.note': {
+      en: 'Seven links of welded alloy steel, each 20 mm long. Shorter than the cord version: chain transmits 100% of kinetic energy at the endpoint, so a longer chain creates dangerously unpredictable whip dynamics. 14 cm is the minimum for clean behind-the-back passes while maintaining a tight, controlled arc. Traditional Okinawan kusari used 5-7 links — NISETSU uses 7 for the wider arc.',
+      ru: 'Семь звеньев сваренной легированной стали, каждое 20 мм. Короче шнуровой версии: цепь передаёт 100% кинетической энергии на конечную точку, поэтому более длинная цепь создаёт опасно непредсказуемую хлыстовую динамику. 14 см — минимум для чистых проводок за спиной при сохранении тугой контролируемой дуги. Традиционные окинавские кусари использовали 5-7 звеньев — NISETSU использует 7 для более широкой дуги.',
+      zh: '七个焊接合金钢链环，每个长20毫米。比绳版更短：链条在端点传输100%动能，因此更长的链条会产生危险的不可预测鞭击动力。14厘米是保持紧凑可控弧线的同时完成干净背后通过的最低限度。传统冲绳锁使用5-7个链环——NISETSU使用7个以获得更宽的弧线。',
+      ja: '溶接合金鋼のリンク7個、各20 mm。紐版より短い：鎖はエンドポイントで運動エネルギーの100%を伝達するため、長い鎖は危険で予測不能な鞭のダイナミクスを生む。14 cmは、タイトで制御された弧を維持しながら背面パスをクリーンに行える最小値。伝統的な沖縄の鎖は5〜7リンク — NISETSUはより広い弧のために7リンクを使用。',
+      id: 'Tujuh mata rantai baja paduan las, masing-masing 20 mm. Lebih pendek dari versi tali: rantai mentransmisikan 100% energi kinetik di titik akhir, jadi rantai yang lebih panjang menciptakan dinamika cambuk yang berbahaya dan tak terduga. 14 cm adalah minimum untuk lintasan belakang punggung yang bersih sambil mempertahankan lengkungan ketat dan terkontrol. Kusari Okinawa tradisional menggunakan 5-7 mata rantai — NISETSU menggunakan 7 untuk lengkungan lebih luas.',
+    },
+    'specs.kusari.total.label': { en: 'Total extended length', ru: 'Полная длина', zh: '总伸展长度', ja: '全伸長', id: 'Panjang total' },
+    'specs.kusari.total.note': {
+      en: '28 cm + 14 cm + 28 cm = 70 cm. Handle-to-chain ratio is 4:2:4 (simplified 2:1:2). 8 cm shorter total reach than the himo series — the tighter radius is intentional. Combat forms prioritize rapid recovery and close-quarters control over the wide flowing arcs of training practice.',
+      ru: '28 см + 14 см + 28 см = 70 см. Соотношение рукоять:цепь — 4:2:4 (упрощённо 2:1:2). На 8 см короче серии химо — меньший радиус сделан намеренно. Боевые формы приоритизируют быстрое восстановление и контроль в ближнем бою над широкими текучими дугами тренировочной практики.',
+      zh: '28厘米 + 14厘米 + 28厘米 = 70厘米。柄与链比为4:2:4（简化2:1:2）。总长比绳系列短8厘米——更紧凑的半径是有意为之。实战形式优先考虑快速恢复和近距离控制，而非训练中的大幅流畅弧线。',
+      ja: '28 cm + 14 cm + 28 cm = 70 cm。柄と鎖の比率は4:2:4（簡略化2:1:2）。紐シリーズより全長8 cm短い——より狭い半径は意図的。実戦型は、稽古の広い流れる弧よりも、素早いリカバリーと近接制御を優先する。',
+      id: '28 cm + 14 cm + 28 cm = 70 cm. Rasio gagang-ke-rantai adalah 4:2:4 (disederhanakan 2:1:2). 8 cm lebih pendek dari seri himo — radius lebih ketat disengaja. Bentuk tempur memprioritaskan pemulihan cepat dan kontrol jarak dekat di atas lengkungan luas mengalir dari latihan.',
+    },
+    'specs.kusari.weight.label': { en: 'Total weight', ru: 'Общий вес', zh: '总重量', ja: '総重量', id: 'Berat total' },
+    'specs.kusari.weight.note': {
+      en: '41% heavier than the Kuro himo. The chain itself weighs 68 g (vs 12 g for silk cord), and the handles use steel-reinforced end caps (swivel mounts) adding 22 g per side. The additional mass is concentrated at the center — the swinging mass is felt immediately on the first rotation. This is not a flaw; it is the point. Kobudo forms are built around this resistance.',
+      ru: 'На 41% тяжелее Куро-химо. Сама цепь весит 68 г (против 12 г шёлкового шнура), а рукояти используют стальные наконечники (крепления вертлюга), добавляющие 22 г на сторону. Дополнительная масса сконцентрирована в центре — маховая масса ощущается сразу при первом обороте. Это не дефект; в этом суть. Формы кобудо построены вокруг этого сопротивления.',
+      zh: '比黒绳版重41%。链条本身重68克（丝绳仅12克），手柄使用钢制端盖（旋转支座），每侧增加22克。额外质量集中在中心——第一次旋转就能立即感受到摆动质量。这不是缺陷，这就是要点。古武道形式正是围绕这种阻力而构建的。',
+      ja: '黒紐より41%重い。鎖自体が68 g（絹紐12 gに対して）、柄はスチール補強エンドキャップ（スイベルマウント）を使用し、各側22 gを追加。追加質量は中央に集中——振り質量は最初の回転で即座に感じられる。これは欠陥ではない。それが要点だ。古武道の型はこの抵抗を中心に構築されている。',
+      id: 'Lebih berat 41% dari Kuro himo. Rantai sendiri berbobot 68 g (vs 12 g untuk tali sutra), dan gagang menggunakan tutup ujung bertulang baja (dudukan swivel) menambah 22 g per sisi. Massa tambahan terkonsentrasi di pusat — massa ayunan terasa langsung pada rotasi pertama. Ini bukan cacat; ini intinya. Bentuk kobudo dibangun di sekitar resistensi ini.',
+    },
+    'specs.kusari.swivel.label': { en: 'Swivel type', ru: 'Тип вертлюга', zh: '转环类型', ja: 'スイベル', id: 'Jenis swivel' },
+    'specs.kusari.swivel.val': { en: 'Ball bearing', ru: 'Шарикоподшипник', zh: '滚珠轴承', ja: 'ボールベアリング', id: 'Bantalan bola' },
+    'specs.kusari.swivel.note': {
+      en: 'Sealed dual ball-bearing swivel at each handle-to-chain junction. 316L marine-grade stainless steel housing, rated to 4,500 N (459 kg). Free rotation eliminates cord-twist binding — the chain never tangles, even during continuous high-speed figure-eight passes. The bearing adds 8 g per side but removes the single most common failure mode in chain nunchaku.',
+      ru: 'Герметичный двойной шарикоподшипниковый вертлюг в каждом соединении рукояти и цепи. Корпус из морской нержавеющей стали 316L, рассчитан на 4500 Н (459 кг). Свободное вращение устраняет скручивание — цепь никогда не запутывается, даже при непрерывных высокоскоростных восьмёрках. Подшипник добавляет 8 г на сторону, но устраняет самый распространённый вид отказа в цепных нунчаку.',
+      zh: '每个手柄与链条接合处配备密封双滚珠轴承旋转环。316L船用不锈钢外壳，额定4500牛顿（459公斤）。自由旋转消除绳索扭结——即使在连续高速8字通过中链条也不会缠绕。轴承每侧增加8克，但消除了链式双节棍中最常见的故障模式。',
+      ja: '各柄と鎖の接合部に密封式デュアルボールベアリングスイベル。316L船舶用ステンレス鋼ハウジング、4,500 N（459 kg）耐荷重。自由回転により紐のねじれ結合を排除——連続高速八の字パス中でも鎖が絡まることはない。ベアリングは各側8 gを追加するが、鎖ヌンチャクの最も一般的な故障モードを排除する。',
+      id: 'Swivel bantalan bola ganda tersegel di setiap persimpangan gagang-ke-rantai. Housing baja tahan karat 316L kelas laut, dinilai 4.500 N (459 kg). Rotasi bebas menghilangkan ikatan puntiran tali — rantai tidak pernah kusut, bahkan selama lintasan angka delapan berkecepatan tinggi terus-menerus. Bantalan menambah 8 g per sisi tetapi menghilangkan mode kegagalan paling umum pada nunchaku rantai.',
+    },
+    'specs.kusari.balance.label': { en: 'Balance point', ru: 'Точка баланса', zh: '平衡点', ja: '重心位置', id: 'Titik keseimbangan' },
+    'specs.kusari.balance.note': {
+      en: 'Center of gravity at 35% from the chain end (9.8 cm from top) — shifted 5% closer to the chain compared to himo. The heavier chain connector pulls the balance point upward, increasing tip speed during strikes. This is the fundamental biomechanical difference: himo balance favors flow; kusari balance favors impact.',
+      ru: 'Центр тяжести на 35% от конца цепи (9,8 см от верха) — на 5% ближе к цепи по сравнению с химо. Более тяжёлое цепное соединение тянет точку баланса вверх, увеличивая скорость наконечника при ударах. Это фундаментальное биомеханическое различие: баланс химо благоприятствует потоку; баланс кусари — удару.',
+      zh: '重心位于链端起35%处（距顶部9.8厘米）——与绳版相比向链端移动了5%。较重的链条连接件将平衡点上拉，增加击打时的尖端速度。这是根本的生物力学差异：绳的平衡利于流动；链的平衡利于冲击。',
+      ja: '鎖端から35%の位置（上から9.8 cm）に重心——紐と比べ5%鎖に近い。重い鎖コネクタが重心を引き上げ、打撃時の先端速度を増す。これが基本的な生体力学的差異：紐のバランスは流れに適し、鎖のバランスは衝撃に適す。',
+      id: 'Pusat gravitasi pada 35% dari ujung rantai (9,8 cm dari atas) — bergeser 5% lebih dekat ke rantai dibanding himo. Konektor rantai yang lebih berat menarik titik keseimbangan ke atas, meningkatkan kecepatan ujung saat pukulan. Ini adalah perbedaan biomekanis mendasar: keseimbangan himo mendukung aliran; keseimbangan kusari mendukung dampak.',
+    },
+
+    /* Chain engineering */
+    'specs.kusari.chain.eng.title': {
+      en: 'The chain:<br><span class="italic">seven links, zero forgiveness.</span>',
+      ru: 'Цепь:<br><span class="italic">семь звеньев, ноль прощения.</span>',
+      zh: '链条：<br><span class="italic">七个链环，零容错。</span>',
+      ja: '鎖：<br><span class="italic">七つの環、容赦なし。</span>',
+      id: 'Rantai:<br><span class="italic">tujuh mata, nol ampun.</span>',
+    },
+    'specs.kusari.chain.eng.p1': {
+      en: 'Each link is drop-forged from 4140 chromoly steel, heat-treated to Rockwell C 42-45. The links are welded shut with TIG, then individually load-tested to 3,200 N before assembly. Unlike mass-produced nunchaku chains that use open-loop links (which can snag on clothing and deform under impact), NISETSU\'s closed-loop links have no gap. The chain is functionally a single continuous component.',
+      ru: 'Каждое звено штамповано из хромомолибденовой стали 4140, термообработано до Rockwell C 42-45. Звенья заварены TIG-сваркой, затем каждое проходит нагрузочные испытания до 3200 Н перед сборкой. В отличие от серийных цепей с открытыми звеньями (которые цепляются за одежду и деформируются при ударе), замкнутые звенья NISETSU не имеют зазора. Цепь функционально является единым непрерывным компонентом.',
+      zh: '每个链环由4140铬钼钢模锻，热处理至洛氏硬度C 42-45。链环以TIG焊接封闭，然后在组装前逐个承受3200牛顿的载荷测试。不同于量产双节棍使用的开环链环（会钩住衣物并在冲击下变形），NISETSU的闭环链环没有间隙。链条在功能上是一个连续整体。',
+      ja: '各リンクは4140クロモリ鋼からドロップフォージ、ロックウェルC 42-45に熱処理。TIG溶接で封鎖後、組立前に個別に3,200 Nの荷重試験。大量生産のヌンチャクチェーンが使うオープンループリンク（衣服に引っかかり衝撃で変形する）とは異なり、NISETSUのクローズドループリンクには隙間がない。鎖は機能的に単一の連続部品である。',
+      id: 'Setiap mata rantai ditempa jatuh dari baja chromoly 4140, diberi perlakuan panas ke Rockwell C 42-45. Mata rantai dilas tertutup dengan TIG, kemudian diuji beban secara individual hingga 3.200 N sebelum perakitan. Berbeda dengan rantai nunchaku produksi massal yang menggunakan mata rantai loop terbuka (yang bisa menyangkut pakaian dan berubah bentuk saat benturan), mata rantai loop tertutup NISETSU tidak memiliki celah. Rantai secara fungsional merupakan satu komponen kontinu.',
+    },
+    'specs.kusari.chain.eng.p2': {
+      en: 'Link profile is oval, not round — 20 mm long axis, 12 mm short axis. The oval shape nests cleanly when the chain is gathered in the hand, producing a flat stack rather than a ball. This matters during the "closed carry" position (shimae-kata) where both handles are held parallel with the chain draped between them.',
+      ru: 'Профиль звена овальный, не круглый — 20 мм по длинной оси, 12 мм по короткой. Овальная форма чисто складывается при сборе цепи в руке, образуя плоскую стопку, а не клубок. Это важно в позиции «закрытого ношения» (симаэ-ката), где обе рукояти держатся параллельно с цепью между ними.',
+      zh: '链环截面为椭圆形而非圆形——长轴20毫米，短轴12毫米。椭圆形状在链条被握入手中时干净叠放，形成扁平堆叠而非球形。这在「收合携行」姿势（仕舞形）中很重要，此时两根手柄平行握持，链条垂挂其间。',
+      ja: 'リンクのプロファイルは丸ではなく楕円——長軸20 mm、短軸12 mm。楕円形は鎖を手に集めた時にきれいに重なり、球ではなく平らなスタックになる。これは「収め方」（仕舞い方）で重要。両柄を平行に持ち、鎖を間に垂らす姿勢だ。',
+      id: 'Profil mata rantai oval, bukan bulat — sumbu panjang 20 mm, sumbu pendek 12 mm. Bentuk oval tersarang rapi saat rantai dikumpulkan di tangan, menghasilkan tumpukan datar alih-alih bola. Ini penting selama posisi "bawa tertutup" (shimae-kata) di mana kedua gagang dipegang sejajar dengan rantai tergantung di antaranya.',
+    },
+    'specs.kusari.chain.eng.quote': {
+      en: 'Cord whispers. Chain announces. The practitioner who chooses kusari is choosing to be heard.',
+      ru: 'Шнур шепчет. Цепь объявляет. Практикующий, выбирающий кусари, выбирает быть услышанным.',
+      zh: '绳低语。链宣告。选择锁的习练者，选择的是被听见。',
+      ja: '紐は囁く。鎖は告げる。鎖を選ぶ稽古者は、聞かれることを選んでいる。',
+      id: 'Tali berbisik. Rantai mengumumkan. Praktisi yang memilih kusari memilih untuk didengar.',
+    },
+    'specs.kusari.dynamics.title': {
+      en: 'Combat dynamics:<br><span class="italic">energy transfer at 100%.</span>',
+      ru: 'Динамика боя:<br><span class="italic">передача энергии на 100%.</span>',
+      zh: '实战动力学：<br><span class="italic">100%能量传递。</span>',
+      ja: '戦闘力学：<br><span class="italic">エネルギー伝達100%。</span>',
+      id: 'Dinamika tempur:<br><span class="italic">transfer energi 100%.</span>',
+    },
+    'specs.kusari.dynamics.p1': {
+      en: 'Silk cord has 18-20% elongation at break — it stretches, absorbs, and returns energy gradually. Steel chain has 0% elongation. Every joule of kinetic energy generated by the swing arrives at the endpoint without loss. In biomechanical terms: a cord nunchaku at full swing delivers approximately 47 J of impact energy. The same swing with a chain nunchaku delivers 62 J — a 32% increase — purely from elimination of elastic loss.',
+      ru: 'Шёлковый шнур имеет удлинение при разрыве 18-20% — он растягивается, поглощает и постепенно возвращает энергию. Стальная цепь: 0% удлинения. Каждый джоуль кинетической энергии от размаха доходит до конечной точки без потерь. В биомеханических терминах: шнуровые нунчаку на полном размахе дают примерно 47 Дж энергии удара. Тот же размах с цепными — 62 Дж — рост на 32% — чисто за счёт устранения упругих потерь.',
+      zh: '丝绳断裂伸长率18-20%——它拉伸、吸收、逐步返回能量。钢链伸长率0%。挥击产生的每一焦耳动能毫无损失地到达端点。以生物力学术语：绳式双节棍全力挥击产生约47焦耳冲击能。同样挥击的链式产生62焦耳——增加32%——纯粹源于弹性损失的消除。',
+      ja: '絹紐の破断伸び率は18〜20%——伸び、吸収し、エネルギーを徐々に返す。鋼鎖の伸び率は0%。スイングで生成されるすべての運動エネルギーが、損失なくエンドポイントに到達する。生体力学的に言えば：紐ヌンチャクのフルスイングは約47 Jの衝撃エネルギー。同じスイングの鎖ヌンチャクは62 J——32%の増加——純粋に弾性損失の排除による。',
+      id: 'Tali sutra memiliki perpanjangan saat putus 18-20% — meregang, menyerap, dan mengembalikan energi secara bertahap. Rantai baja memiliki perpanjangan 0%. Setiap joule energi kinetik yang dihasilkan ayunan tiba di titik akhir tanpa kehilangan. Secara biomekanis: nunchaku tali pada ayunan penuh menghasilkan sekitar 47 J energi dampak. Ayunan yang sama dengan nunchaku rantai menghasilkan 62 J — peningkatan 32% — murni dari eliminasi kehilangan elastis.',
+    },
+    'specs.kusari.dynamics.p2': {
+      en: 'This changes how the weapon must be trained. Recovery after a missed strike is faster (the chain doesn\'t stretch and bounce back), but the rebound is harder and less predictable. Kusari practitioners develop a different wrist articulation — a sharp "snap" at the end of each arc rather than the continuous roll of himo practice. The two styles are complementary, not interchangeable.',
+      ru: 'Это меняет подход к тренировке. Восстановление после промаха быстрее (цепь не растягивается и не пружинит), но отскок жёстче и менее предсказуем. Практикующие кусари развивают иную артикуляцию запястья — резкий «щелчок» в конце каждой дуги вместо непрерывного перекатывания химо-практики. Два стиля дополняют, а не заменяют друг друга.',
+      zh: '这改变了必须训练该武器的方式。落空后的恢复更快（链条不拉伸也不回弹），但反弹更硬且更不可预测。锁的习练者发展出不同的手腕关节技巧——在每个弧线末端的锐利「弹击」，而非绳式练习的连续滚动。两种风格互补而非可互换。',
+      ja: 'これは武器の稽古方法を変える。空振り後のリカバリーは速い（鎖は伸びて跳ね返らない）が、リバウンドはより硬く予測しにくい。鎖の稽古者は異なる手首の使い方を身につける——紐稽古の連続的なロールではなく、各弧の終わりでの鋭い「スナップ」。二つのスタイルは補完的であり、互換ではない。',
+      id: 'Ini mengubah cara senjata harus dilatih. Pemulihan setelah pukulan meleset lebih cepat (rantai tidak meregang dan memantul), tetapi pantulan lebih keras dan kurang prediktif. Praktisi kusari mengembangkan artikulasi pergelangan tangan berbeda — "jentikan" tajam di akhir setiap lengkungan alih-alih gulungan kontinu latihan himo. Kedua gaya saling melengkapi, bukan saling menggantikan.',
+    },
+    'specs.kusari.dynamics.quote': {
+      en: 'Impact energy: cord 47 J vs chain 62 J at identical swing speed. The 32% difference is the chain\'s zero elongation.',
+      ru: 'Энергия удара: шнур 47 Дж vs цепь 62 Дж при одинаковой скорости замаха. 32% разницы — нулевое удлинение цепи.',
+      zh: '冲击能量：绳47焦耳 vs 链62焦耳，在相同挥击速度下。32%的差异来自链条的零伸长率。',
+      ja: '衝撃エネルギー：紐47 J vs 鎖62 J、同一スイング速度で。32%の差は鎖のゼロ伸び率による。',
+      id: 'Energi dampak: tali 47 J vs rantai 62 J pada kecepatan ayunan identik. Perbedaan 32% adalah perpanjangan nol rantai.',
+    },
+
+    /* Kusari blueprint */
+    'specs.kusari.bp.label': {
+      en: 'Technical drawing · Kusari assembly', ru: 'Чертёж · Сборка кусари',
+      zh: '技术图纸 · 锁组件', ja: '技術図面 · 鎖の組立', id: 'Gambar teknis · Rakitan kusari',
+    },
+    'specs.kusari.bp.sub': {
+      en: 'Chain link geometry, ball-bearing swivel cross-section,<br>handle end-cap assembly, and closed-loop weld detail.<br>— Placeholder for commissioned technical illustration —',
+      ru: 'Геометрия звеньев, сечение шарикоподшипникового вертлюга,<br>сборка торцевых крышек, деталь замкнутой сварки.<br>— Место для заказной технической иллюстрации —',
+      zh: '链环几何形状、滚珠轴承旋转环截面、<br>手柄端盖组件和闭环焊接细节。<br>— 此处为委托技术插图预留位 —',
+      ja: 'チェーンリンクの形状、ボールベアリングスイベルの断面、<br>柄エンドキャップの組立、クローズドループ溶接の詳細。<br>— 委託技術図面のプレースホルダー —',
+      id: 'Geometri mata rantai, penampang swivel bantalan bola,<br>rakitan tutup ujung gagang, dan detail las loop tertutup.<br>— Placeholder untuk ilustrasi teknis yang ditugaskan —',
+    },
+    'specs.kusari.bp.caption': {
+      en: 'Fig. 07 · Kusari assembly detail. The ball-bearing swivel housing is press-fitted into a countersunk steel end cap, which itself friction-fits into the handle bore. The chain attaches to the swivel via a closed shackle — no split rings or open connectors anywhere in the load path.',
+      ru: 'Рис. 07 · Деталь сборки кусари. Корпус шарикоподшипникового вертлюга запрессован в потайную стальную крышку, которая установлена на трении в отверстие рукояти. Цепь крепится к вертлюгу через замкнутую скобу — никаких разрезных колец и открытых соединителей на пути нагрузки.',
+      zh: '图07 · 锁组件细节。滚珠轴承旋转环外壳压入埋头钢制端盖，端盖本身以摩擦配合插入手柄孔。链条通过闭合卸扣连接到旋转环——载荷路径上无开口环或开放式连接件。',
+      ja: '図07 · 鎖組立の詳細。ボールベアリングスイベルのハウジングは座ぐり鋼製エンドキャップに圧入され、エンドキャップ自体が柄のボアに圧入嵌合する。鎖はクローズドシャックルでスイベルに接続——荷重経路にスプリットリングやオープンコネクタは一切ない。',
+      id: 'Gbr. 07 · Detail rakitan kusari. Housing swivel bantalan bola dipasang tekan ke tutup ujung baja countersunk, yang sendiri dipasang gesekan ke lubang gagang. Rantai terhubung ke swivel melalui segel tertutup — tidak ada cincin belah atau konektor terbuka di mana pun di jalur beban.',
+    },
+
+    /* Himo vs Kusari table */
+    'specs.vs.label': {
+      en: 'Himo (cord) vs Kusari (chain)', ru: 'Химо (шнур) vs Кусари (цепь)',
+      zh: '绳 vs 链', ja: '紐 vs 鎖', id: 'Himo (tali) vs Kusari (rantai)',
+    },
+    'specs.vs.himo': { en: '紐 Himo · Training', ru: '紐 Химо · Тренировочные', zh: '紐 绳 · 训练', ja: '紐 · 稽古', id: '紐 Himo · Latihan' },
+    'specs.vs.kusari': { en: '鎖 Kusari · Combat', ru: '鎖 Кусари · Боевые', zh: '鎖 锁 · 实战', ja: '鎖 · 実戦', id: '鎖 Kusari · Tempur' },
+    'specs.vs.connector': { en: 'Connector', ru: 'Соединение', zh: '连接件', ja: '接続', id: 'Konektor' },
+    'specs.vs.himo.connector': { en: '12-strand silk braid + aramid core', ru: '12-прядный шёлковый плёт + арамидный сердечник', zh: '12股丝编 + 芳纶芯', ja: '12本絹組紐 + アラミド芯', id: 'Anyaman sutra 12 helai + inti aramid' },
+    'specs.vs.kusari.connector': { en: '7-link 4140 chromoly chain', ru: '7-звенная хромомолибденовая цепь 4140', zh: '7环4140铬钼钢链', ja: '7リンク4140クロモリチェーン', id: 'Rantai chromoly 4140 7 mata' },
+    'specs.vs.connlen': { en: 'Connector length', ru: 'Длина соединения', zh: '连接件长度', ja: '接続長', id: 'Panjang konektor' },
+    'specs.vs.connwt': { en: 'Connector weight', ru: 'Вес соединения', zh: '连接件重量', ja: '接続重量', id: 'Berat konektor' },
+    'specs.vs.handlelen': { en: 'Handle length', ru: 'Длина рукояти', zh: '柄长', ja: '柄の長さ', id: 'Panjang gagang' },
+    'specs.vs.totalwt': { en: 'Total weight', ru: 'Общий вес', zh: '总重量', ja: '総重量', id: 'Berat total' },
+    'specs.vs.reach': { en: 'Total reach', ru: 'Общий охват', zh: '总长度', ja: '全長', id: 'Jangkauan total' },
+    'specs.vs.elongation': { en: 'Elongation at break', ru: 'Удлинение при разрыве', zh: '断裂伸长率', ja: '破断伸び率', id: 'Perpanjangan saat putus' },
+    'specs.vs.impact': { en: 'Impact energy (full swing)', ru: 'Энергия удара (полный замах)', zh: '冲击能量（全力挥击）', ja: '衝撃エネルギー（フルスイング）', id: 'Energi dampak (ayunan penuh)' },
+    'specs.vs.tensile': { en: 'Tensile strength', ru: 'Прочность на разрыв', zh: '抗拉强度', ja: '引張強度', id: 'Kekuatan tarik' },
+    'specs.vs.noise': { en: 'Noise level', ru: 'Уровень шума', zh: '噪音级别', ja: '音量', id: 'Tingkat kebisingan' },
+    'specs.vs.himo.noise': { en: 'Silent', ru: 'Бесшумный', zh: '无声', ja: '無音', id: 'Sunyi' },
+    'specs.vs.kusari.noise': { en: 'Audible (link articulation)', ru: 'Слышимый (звук звеньев)', zh: '有声（链环关节声）', ja: '有音（リンクの関節音）', id: 'Terdengar (artikulasi mata rantai)' },
+    'specs.vs.rotation': { en: 'Joint rotation', ru: 'Вращение сустава', zh: '关节旋转', ja: '関節回転', id: 'Rotasi sendi' },
+    'specs.vs.himo.rotation': { en: 'Limited by twist accumulation', ru: 'Ограничено накоплением скручивания', zh: '受扭转累积限制', ja: 'ねじれ蓄積により制限', id: 'Dibatasi akumulasi puntiran' },
+    'specs.vs.kusari.rotation': { en: 'Free (ball-bearing swivel)', ru: 'Свободное (подшипниковый вертлюг)', zh: '自由（滚珠轴承转环）', ja: '自由（ボールベアリングスイベル）', id: 'Bebas (swivel bantalan bola)' },
+    'specs.vs.style': { en: 'Recommended style', ru: 'Рекомендуемый стиль', zh: '推荐风格', ja: '推奨スタイル', id: 'Gaya yang disarankan' },
+    'specs.vs.himo.style': { en: 'Kaiten (flow), daily training', ru: 'Кайтэн (поток), ежедневная тренировка', zh: '回转（流动），日常训练', ja: '回転（フロー）、日常稽古', id: 'Kaiten (aliran), latihan harian' },
+    'specs.vs.kusari.style': { en: 'Kobudo, classical combat forms', ru: 'Кобудо, классические боевые формы', zh: '古武道，古典实战形式', ja: '古武道、古典実戦型', id: 'Kobudo, bentuk tempur klasik' },
   };
 
 
@@ -968,7 +1149,7 @@
   }
 
   function updateSwitcher(lang) {
-    document.querySelectorAll('.lang a[data-lang]').forEach((a) => {
+    document.querySelectorAll('.lang [data-lang]').forEach((a) => {
       a.classList.toggle('active', a.dataset.lang === lang);
     });
   }
@@ -977,7 +1158,7 @@
     buildIndex();
 
     // Bind switcher clicks
-    document.querySelectorAll('.lang a[data-lang]').forEach((a) => {
+    document.querySelectorAll('.lang [data-lang]').forEach((a) => {
       a.addEventListener('click', (e) => {
         e.preventDefault();
         setLang(a.dataset.lang);

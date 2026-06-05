@@ -73,8 +73,8 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   padding: 10px var(--gutter); color: var(--ink-quiet);
 }
 .lang { display: flex; gap: 14px; }
-.lang a { color: var(--ink-faint); transition: color 280ms ease; }
-.lang a:hover, .lang a.active { color: var(--ink); }
+.lang button { color: var(--ink-faint); transition: color 280ms ease; background: none; border: 0; cursor: pointer; font: inherit; padding: 0; }
+.lang button:hover, .lang button.active { color: var(--ink); }
 
 /* ---- Nav ---- */
 .nav {
@@ -319,11 +319,11 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 <div class="utility">
   <span class="micro" data-i18n="util.shipping">Complimentary worldwide shipping on editions above $1,500</span>
   <div class="lang">
-    <a href="#" class="micro active" data-lang="en">EN</a>
-    <a href="#" class="micro" data-lang="ru">RU</a>
-    <a href="#" class="micro" data-lang="zh">中文</a>
-    <a href="#" class="micro" data-lang="ja">JP</a>
-    <a href="#" class="micro" data-lang="id">ID</a>
+    <button class="micro active" data-lang="en">EN</button>
+    <button class="micro" data-lang="ru">RU</button>
+    <button class="micro" data-lang="zh">中文</button>
+    <button class="micro" data-lang="ja">JP</button>
+    <button class="micro" data-lang="id">ID</button>
   </div>
 </div>
 <hr class="rule">
@@ -755,6 +755,247 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
     each collar must be individually turned and tested against its specific handle.
     Production collars are not interchangeable between pairs.
   </p>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     KUSARI · COMBAT SERIES
+     ============================================================ -->
+<header class="page-header" style="padding-top: 80px;">
+  <span class="micro page-header__label" data-i18n="specs.kusari.label">05 — Combat series · 鎖 Kusari</span>
+  <h1 class="page-header__title" data-i18n="specs.kusari.title">The chain<br><span class="italic">changes everything.</span></h1>
+  <p class="page-header__subtitle" data-i18n="specs.kusari.subtitle">
+    Cord absorbs. Chain transmits. The kusari series is built for practitioners
+    who train in Okinawan kobudo and classical combat forms — where the weapon
+    is expected to strike, not merely to flow. Every parameter shifts to accommodate
+    the physics of a rigid metal connector.
+  </p>
+</header>
+<hr class="rule">
+
+<!-- Kusari specs grid -->
+<section class="specs-section">
+  <span class="micro specs-section__label" data-i18n="specs.kusari.dims">Kusari dimensions</span>
+  <div class="specs-grid">
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.kusari.handle.label">Handle length</div>
+      <div class="spec-cell__value">28 <span style="font-size:18px; color: var(--ink-muted);">cm</span></div>
+      <div class="spec-cell__note" data-i18n="specs.kusari.handle.note">
+        2 cm shorter than the himo series. Chain nunchaku rotate faster due to reduced
+        friction at the connector — the shorter handle compensates by lowering the moment
+        of inertia, preventing the arc from becoming uncontrollable.
+        The 28 cm dimension is the traditional Okinawan competition standard (shinai-length rule).
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.kusari.chain.label">Chain length</div>
+      <div class="spec-cell__value">14 <span style="font-size:18px; color: var(--ink-muted);">cm</span></div>
+      <div class="spec-cell__note" data-i18n="specs.kusari.chain.note">
+        Seven links of welded alloy steel, each 20 mm long. Shorter than the cord version:
+        chain transmits 100% of kinetic energy at the endpoint, so a longer chain
+        creates dangerously unpredictable whip dynamics. 14 cm is the minimum for
+        clean behind-the-back passes while maintaining a tight, controlled arc.
+        Traditional Okinawan kusari used 5-7 links — NISETSU uses 7 for the wider arc.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.kusari.total.label">Total extended length</div>
+      <div class="spec-cell__value">70 <span style="font-size:18px; color: var(--ink-muted);">cm</span></div>
+      <div class="spec-cell__note" data-i18n="specs.kusari.total.note">
+        28 cm + 14 cm + 28 cm = 70 cm. Handle-to-chain ratio is 4:2:4 (simplified 2:1:2).
+        8 cm shorter total reach than the himo series — the tighter radius is intentional.
+        Combat forms prioritize rapid recovery and close-quarters control over
+        the wide flowing arcs of training practice.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.kusari.weight.label">Total weight</div>
+      <div class="spec-cell__value">480 <span style="font-size:18px; color: var(--ink-muted);">g</span></div>
+      <div class="spec-cell__note" data-i18n="specs.kusari.weight.note">
+        41% heavier than the Kuro himo. The chain itself weighs 68 g (vs 12 g for silk cord),
+        and the handles use steel-reinforced end caps (swivel mounts) adding 22 g per side.
+        The additional mass is concentrated at the center — the swinging mass is felt
+        immediately on the first rotation. This is not a flaw; it is the point.
+        Kobudo forms are built around this resistance.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.kusari.swivel.label">Swivel type</div>
+      <div class="spec-cell__value" data-i18n="specs.kusari.swivel.val">Ball bearing</div>
+      <div class="spec-cell__note" data-i18n="specs.kusari.swivel.note">
+        Sealed dual ball-bearing swivel at each handle-to-chain junction.
+        316L marine-grade stainless steel housing, rated to 4,500 N (459 kg).
+        Free rotation eliminates cord-twist binding — the chain never tangles,
+        even during continuous high-speed figure-eight passes. The bearing adds 8 g
+        per side but removes the single most common failure mode in chain nunchaku.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.kusari.balance.label">Balance point</div>
+      <div class="spec-cell__value">35% <span style="font-size:18px; color: var(--ink-muted);"></span></div>
+      <div class="spec-cell__note" data-i18n="specs.kusari.balance.note">
+        Center of gravity at 35% from the chain end (9.8 cm from top) — shifted 5%
+        closer to the chain compared to himo. The heavier chain connector pulls
+        the balance point upward, increasing tip speed during strikes. This is the
+        fundamental biomechanical difference: himo balance favors flow;
+        kusari balance favors impact.
+      </div>
+    </div>
+
+  </div>
+</section>
+<hr class="rule">
+
+<!-- Chain engineering narrative -->
+<section class="narrative">
+  <div class="narrative__col">
+    <h3 data-i18n="specs.kusari.chain.eng.title">The chain:<br><span class="italic">seven links, zero forgiveness.</span></h3>
+    <p data-i18n="specs.kusari.chain.eng.p1">
+      Each link is drop-forged from 4140 chromoly steel, heat-treated to Rockwell C 42-45.
+      The links are welded shut with TIG, then individually load-tested to 3,200 N before assembly.
+      Unlike mass-produced nunchaku chains that use open-loop links (which can snag on clothing
+      and deform under impact), NISETSU's closed-loop links have no gap. The chain is functionally
+      a single continuous component.
+    </p>
+    <p data-i18n="specs.kusari.chain.eng.p2">
+      Link profile is oval, not round — 20 mm long axis, 12 mm short axis.
+      The oval shape nests cleanly when the chain is gathered in the hand,
+      producing a flat stack rather than a ball. This matters during the
+      "closed carry" position (shimae-kata) where both handles are held parallel
+      with the chain draped between them.
+    </p>
+    <div class="highlight" data-i18n="specs.kusari.chain.eng.quote">
+      Cord whispers. Chain announces. The practitioner who chooses kusari
+      is choosing to be heard.
+    </div>
+  </div>
+
+  <div class="narrative__col">
+    <h3 data-i18n="specs.kusari.dynamics.title">Combat dynamics:<br><span class="italic">energy transfer at 100%.</span></h3>
+    <p data-i18n="specs.kusari.dynamics.p1">
+      Silk cord has 18-20% elongation at break — it stretches, absorbs,
+      and returns energy gradually. Steel chain has 0% elongation. Every joule
+      of kinetic energy generated by the swing arrives at the endpoint without loss.
+      In biomechanical terms: a cord nunchaku at full swing delivers approximately
+      47 J of impact energy. The same swing with a chain nunchaku delivers 62 J —
+      a 32% increase — purely from elimination of elastic loss.
+    </p>
+    <p data-i18n="specs.kusari.dynamics.p2">
+      This changes how the weapon must be trained. Recovery after a missed strike
+      is faster (the chain doesn't stretch and bounce back), but the rebound
+      is harder and less predictable. Kusari practitioners develop a different
+      wrist articulation — a sharp "snap" at the end of each arc rather than
+      the continuous roll of himo practice. The two styles are complementary,
+      not interchangeable.
+    </p>
+    <div class="highlight" data-i18n="specs.kusari.dynamics.quote">
+      Impact energy: cord 47 J vs chain 62 J at identical swing speed.
+      The 32% difference is the chain's zero elongation.
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- Kusari blueprint -->
+<section class="blueprint">
+  <div class="blueprint__frame">
+    <div class="blueprint__grid"></div>
+    <span class="micro blueprint__label" data-i18n="specs.kusari.bp.label">Technical drawing · Kusari assembly</span>
+    <span class="blueprint__sublabel" data-i18n="specs.kusari.bp.sub">
+      Chain link geometry, ball-bearing swivel cross-section,<br>
+      handle end-cap assembly, and closed-loop weld detail.<br>
+      — Placeholder for commissioned technical illustration —
+    </span>
+  </div>
+  <p class="blueprint__caption" data-i18n="specs.kusari.bp.caption">
+    Fig. 07 · Kusari assembly detail. The ball-bearing swivel housing is press-fitted
+    into a countersunk steel end cap, which itself friction-fits into the handle bore.
+    The chain attaches to the swivel via a closed shackle — no split rings or
+    open connectors anywhere in the load path.
+  </p>
+</section>
+<hr class="rule">
+
+<!-- Himo vs Kusari comparison -->
+<section class="comparison">
+  <span class="micro comparison__label" data-i18n="specs.vs.label">Himo (cord) vs Kusari (chain)</span>
+  <table>
+    <thead>
+      <tr>
+        <th data-i18n="specs.compare.parameter">Parameter</th>
+        <th data-i18n="specs.vs.himo">紐 Himo · Training</th>
+        <th data-i18n="specs.vs.kusari">鎖 Kusari · Combat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-i18n="specs.vs.connector">Connector</td>
+        <td data-i18n="specs.vs.himo.connector">12-strand silk braid + aramid core</td>
+        <td data-i18n="specs.vs.kusari.connector">7-link 4140 chromoly chain</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.connlen">Connector length</td>
+        <td>18 cm</td>
+        <td>14 cm</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.connwt">Connector weight</td>
+        <td>12 g</td>
+        <td class="accent-val">68 g</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.handlelen">Handle length</td>
+        <td>30 cm</td>
+        <td>28 cm</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.totalwt">Total weight</td>
+        <td>340 g</td>
+        <td class="accent-val">480 g</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.reach">Total reach</td>
+        <td>78 cm</td>
+        <td>70 cm</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.elongation">Elongation at break</td>
+        <td>18-20%</td>
+        <td class="accent-val">0%</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.impact">Impact energy (full swing)</td>
+        <td>~47 J</td>
+        <td class="accent-val">~62 J (+32%)</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.tensile">Tensile strength</td>
+        <td>2,800 N</td>
+        <td class="accent-val">4,500 N</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.noise">Noise level</td>
+        <td data-i18n="specs.vs.himo.noise">Silent</td>
+        <td data-i18n="specs.vs.kusari.noise">Audible (link articulation)</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.rotation">Joint rotation</td>
+        <td data-i18n="specs.vs.himo.rotation">Limited by twist accumulation</td>
+        <td data-i18n="specs.vs.kusari.rotation">Free (ball-bearing swivel)</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.vs.style">Recommended style</td>
+        <td data-i18n="specs.vs.himo.style">Kaiten (flow), daily training</td>
+        <td data-i18n="specs.vs.kusari.style">Kobudo, classical combat forms</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 <hr class="rule">
 

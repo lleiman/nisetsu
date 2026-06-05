@@ -173,9 +173,9 @@ input { font: inherit; }
 }
 .utility .micro { color: var(--ink-muted); }
 .utility .lang { display: flex; gap: 14px; }
-.utility .lang a { color: var(--ink-muted); transition: color 200ms ease; }
-.utility .lang a.active { color: var(--ink); }
-.utility .lang a:hover { color: var(--ink); }
+.utility .lang button { color: var(--ink-muted); transition: color 200ms ease; background: none; border: 0; cursor: pointer; font: inherit; padding: 0; }
+.utility .lang button.active { color: var(--ink); }
+.utility .lang button:hover { color: var(--ink); }
 
 /* ============================================================
    MAIN NAV — centered wordmark, balanced links
@@ -797,11 +797,11 @@ input { font: inherit; }
 <div class="utility">
   <span class="micro" data-i18n="util.shipping">Complimentary worldwide shipping on editions above $1,500</span>
   <div class="lang">
-    <a href="#" class="micro active" data-lang="en">EN</a>
-    <a href="#" class="micro" data-lang="ru">RU</a>
-    <a href="#" class="micro" data-lang="zh">中文</a>
-    <a href="#" class="micro" data-lang="ja">JP</a>
-    <a href="#" class="micro" data-lang="id">ID</a>
+    <button class="micro active" data-lang="en">EN</button>
+    <button class="micro" data-lang="ru">RU</button>
+    <button class="micro" data-lang="zh">中文</button>
+    <button class="micro" data-lang="ja">JP</button>
+    <button class="micro" data-lang="id">ID</button>
   </div>
 </div>
 <hr class="rule">
