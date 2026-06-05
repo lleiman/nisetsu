@@ -795,11 +795,13 @@ input { font: inherit; }
      UTILITY BAR
      ============================================================ -->
 <div class="utility">
-  <span class="micro">Complimentary worldwide shipping on editions above $1,500</span>
+  <span class="micro" data-i18n="util.shipping">Complimentary worldwide shipping on editions above $1,500</span>
   <div class="lang">
-    <a href="#" class="micro active">EN</a>
-    <a href="#" class="micro">JP</a>
-    <a href="#" class="micro">中文</a>
+    <a href="#" class="micro active" data-lang="en">EN</a>
+    <a href="#" class="micro" data-lang="ru">RU</a>
+    <a href="#" class="micro" data-lang="zh">中文</a>
+    <a href="#" class="micro" data-lang="ja">JP</a>
+    <a href="#" class="micro" data-lang="id">ID</a>
   </div>
 </div>
 <hr class="rule">
@@ -809,19 +811,19 @@ input { font: inherit; }
      ============================================================ -->
 <nav class="nav">
   <div class="left">
-    <a href="/collection" class="nav-link">Collection</a>
-    <a href="/craft" class="nav-link">Craft</a>
-    <a href="/dojo" class="nav-link">Dojo</a>
-    <a href="/journal" class="nav-link">Journal</a>
+    <a href="/collection" class="nav-link" data-i18n="nav.collection">Collection</a>
+    <a href="/craft" class="nav-link" data-i18n="nav.craft">Craft</a>
+    <a href="/specifications" class="nav-link" data-i18n="nav.specs">Specifications</a>
+    <a href="/journal" class="nav-link" data-i18n="nav.journal">Journal</a>
   </div>
   <a href="/" class="wordmark">
     <div class="kanji">二節</div>
     <div class="micro latin">NISETSU · EST. 2026</div>
   </a>
   <div class="right">
-    <a href="/search" class="nav-link">Search</a>
-    <a href="/account" class="nav-link">Account</a>
-    <a href="/cart" class="nav-link">Cart <span style="color: var(--ink-quiet);">(0)</span></a>
+    <a href="/search" class="nav-link" data-i18n="nav.search">Search</a>
+    <a href="/account" class="nav-link" data-i18n="nav.account">Account</a>
+    <a href="/cart" class="nav-link" data-i18n="nav.cart">Cart <span style="color: var(--ink-quiet);">(0)</span></a>
   </div>
 </nav>
 <hr class="rule">
@@ -835,27 +837,27 @@ input { font: inherit; }
 <section class="hero">
   <div class="hero__text">
     <div class="hero__text-top">
-      <span class="micro">No. 001 — Inaugural release</span>
-      <span class="micro">Edition of 120</span>
+      <span class="micro" data-i18n="hero.eyebrow1">No. 001 — Inaugural release</span>
+      <span class="micro" data-i18n="hero.eyebrow2">Edition of 120</span>
     </div>
     <div>
-      <h1 class="hero__title">
+      <h1 class="hero__title" data-i18n="hero.title">
         Two sections.<br>
         <span class="italic">One discipline.</span>
       </h1>
-      <p class="hero__desc">
+      <p class="hero__desc" data-i18n="hero.desc">
         Hand-finished training nunchaku, produced in editions of 120.
         Smoked oak, hand-forged brass, hand-braided silk cord.
         Each pair signed, numbered, and accompanied by a vegetable-tanned leather case.
       </p>
       <div class="hero__actions">
-        <a href="/collection" class="cta">Discover the collection &nbsp;→</a>
-        <a href="/craft" class="cta-text">On the craft</a>
+        <a href="/collection" class="cta" data-i18n="hero.cta">Discover the collection &nbsp;→</a>
+        <a href="/craft" class="cta-text" data-i18n="hero.craft">On the craft</a>
       </div>
     </div>
     <div class="hero__bottom">
-      <span class="micro">Atelier · Kyoto &nbsp;—&nbsp; Studio · Manila</span>
-      <span class="micro">Scroll &nbsp;↓</span>
+      <span class="micro" data-i18n="hero.atelier">Atelier · Kyoto &nbsp;—&nbsp; Studio · Manila</span>
+      <span class="micro" data-i18n="hero.scroll">Scroll &nbsp;↓</span>
     </div>
   </div>
   <div class="hero__panel">
@@ -877,11 +879,11 @@ input { font: inherit; }
         <ellipse cx="120" cy="65" rx="5" ry="3"/>
       </g>
     </svg>
-    <span class="micro hero__panel-edition">
+    <span class="micro hero__panel-edition" data-i18n="hero.panel.name">
       The Kuro pair<br>
       <span style="color: var(--dark-muted);">112 / 120</span>
     </span>
-    <span class="micro hero__panel-caption-left">Fig. 01 · Smoked oak, brass</span>
+    <span class="micro hero__panel-caption-left" data-i18n="hero.panel.fig">Fig. 01 · Smoked oak, brass</span>
     <span class="micro hero__panel-caption-right">$ 1,480</span>
   </div>
 </section>
@@ -891,11 +893,11 @@ input { font: inherit; }
      MANIFESTO — large italic centered statement
      ============================================================ -->
 <section class="manifesto">
-  <p class="manifesto__quote serif italic">
+  <p class="manifesto__quote serif italic" data-i18n="manifesto.quote">
     An object made not to be wielded often,<br>
     but to be returned to.
   </p>
-  <div class="micro manifesto__attr">From the atelier notebook · Kyoto, March 2026</div>
+  <div class="micro manifesto__attr" data-i18n="manifesto.attr">From the atelier notebook · Kyoto, March 2026</div>
 </section>
 <hr class="rule">
 
@@ -904,8 +906,8 @@ input { font: inherit; }
      ============================================================ -->
 <section>
   <div class="collection__head">
-    <h2 class="serif">The Collection</h2>
-    <a href="/collection" class="cta-text">View all editions →</a>
+    <h2 class="serif" data-i18n="collection.title">The Collection</h2>
+    <a href="/collection" class="cta-text" data-i18n="collection.viewall">View all editions →</a>
   </div>
   <hr class="rule">
   <div class="collection__grid">
@@ -934,10 +936,10 @@ input { font: inherit; }
           <div class="product__name">
             <span class="kanji">黒</span><span class="romaji">Kuro</span>
           </div>
-          <div class="product__materials">Smoked oak · hand-forged brass<br>Braided black silk cord</div>
+          <div class="product__materials" data-i18n="product.kuro.materials">Smoked oak · hand-forged brass<br>Braided black silk cord</div>
           <div class="product__bottom">
             <span class="product__price">$1,480</span>
-            <span class="product__view">View →</span>
+            <span class="product__view" data-i18n="product.view">View →</span>
           </div>
         </div>
       </a>
@@ -966,10 +968,10 @@ input { font: inherit; }
           <div class="product__name">
             <span class="kanji">白</span><span class="romaji">Shiro</span>
           </div>
-          <div class="product__materials">Bleached ash · sterling silver collars<br>Ivory silk cord</div>
+          <div class="product__materials" data-i18n="product.shiro.materials">Bleached ash · sterling silver collars<br>Ivory silk cord</div>
           <div class="product__bottom">
             <span class="product__price">$1,720</span>
-            <span class="product__view">View →</span>
+            <span class="product__view" data-i18n="product.view">View →</span>
           </div>
         </div>
       </a>
@@ -998,10 +1000,10 @@ input { font: inherit; }
           <div class="product__name">
             <span class="kanji">朱</span><span class="romaji">Shu</span>
           </div>
-          <div class="product__materials">Bloodwood · blackened steel<br>Oxblood kangaroo leather lacing</div>
+          <div class="product__materials" data-i18n="product.shu.materials">Bloodwood · blackened steel<br>Oxblood kangaroo leather lacing</div>
           <div class="product__bottom">
             <span class="product__price">$1,940</span>
-            <span class="product__view">View →</span>
+            <span class="product__view" data-i18n="product.view">View →</span>
           </div>
         </div>
       </a>
@@ -1033,46 +1035,46 @@ input { font: inherit; }
         <ellipse cx="132" cy="69" rx="5" ry="3"/>
       </g>
     </svg>
-    <span class="micro spotlight__caption">Fig. 02 · Smoked oak, view from above</span>
-    <span class="micro spotlight__signature">黒 · KURO · 002 of 120<br>signed Hashimoto</span>
+    <span class="micro spotlight__caption" data-i18n="spotlight.fig">Fig. 02 · Smoked oak, view from above</span>
+    <span class="micro spotlight__signature" data-i18n="spotlight.signature">黒 · KURO · 002 of 120<br>signed Hashimoto</span>
   </div>
   <div class="spotlight__text">
-    <span class="micro spotlight__label">Spotlight — 黒 Kuro</span>
-    <h2 class="spotlight__title">
+    <span class="micro spotlight__label" data-i18n="spotlight.label">Spotlight — 黒 Kuro</span>
+    <h2 class="spotlight__title" data-i18n="spotlight.title">
       Smoked for eight weeks,<br>
       <span class="italic">returned to oil.</span>
     </h2>
-    <p class="spotlight__body">
+    <p class="spotlight__body" data-i18n="spotlight.body1">
       The Kuro pair begins as quarter-sawn oak from a single tree felled in Tohoku.
       Eight weeks suspended above white-oak smoke darken the wood from the inside;
       the grain remains visible but recedes. Two further weeks soaking in tung oil
       bring the surface back to a soft, almost organic warmth.
     </p>
-    <p class="spotlight__body">
+    <p class="spotlight__body" data-i18n="spotlight.body2">
       Each pair takes 184 hours of work, end to end. The brass is forged in a small
       smithy outside Otsu, then hand-fitted and burnished.
     </p>
     <div class="spotlight__details">
       <div>
-        <div class="micro spotlight__detail-label">Length</div>
-        <div class="spotlight__detail-value">30 cm per section</div>
+        <div class="micro spotlight__detail-label" data-i18n="spotlight.length">Length</div>
+        <div class="spotlight__detail-value" data-i18n="spotlight.length.val">30 cm per section</div>
       </div>
       <div>
-        <div class="micro spotlight__detail-label">Weight</div>
-        <div class="spotlight__detail-value">340 g, balanced</div>
+        <div class="micro spotlight__detail-label" data-i18n="spotlight.weight">Weight</div>
+        <div class="spotlight__detail-value" data-i18n="spotlight.weight.val">340 g, balanced</div>
       </div>
       <div>
-        <div class="micro spotlight__detail-label">Cord</div>
-        <div class="spotlight__detail-value">Hand-braided silk</div>
+        <div class="micro spotlight__detail-label" data-i18n="spotlight.cord">Cord</div>
+        <div class="spotlight__detail-value" data-i18n="spotlight.cord.val">Hand-braided silk</div>
       </div>
       <div>
-        <div class="micro spotlight__detail-label">Finish</div>
-        <div class="spotlight__detail-value">Smoked, oiled, signed</div>
+        <div class="micro spotlight__detail-label" data-i18n="spotlight.finish">Finish</div>
+        <div class="spotlight__detail-value" data-i18n="spotlight.finish.val">Smoked, oiled, signed</div>
       </div>
     </div>
     <div class="spotlight__actions">
-      <a href="/products/kuro" class="cta">Acquire — $1,480</a>
-      <a href="/products/kuro" class="cta-text">Full specifications →</a>
+      <a href="/products/kuro" class="cta" data-i18n="spotlight.cta">Acquire — $1,480</a>
+      <a href="/specifications" class="cta-text" data-i18n="spotlight.specs">Full specifications →</a>
     </div>
   </div>
 </section>
@@ -1082,20 +1084,20 @@ input { font: inherit; }
      ============================================================ -->
 <section class="craft">
   <div class="craft__intro">
-    <span class="micro">02 — The craft</span>
+    <span class="micro" data-i18n="craft.label">02 — The craft</span>
     <div>
-      <h2 class="craft__intro-title">
+      <h2 class="craft__intro-title" data-i18n="craft.title">
         Six months,<br>
         <span class="italic">by two hands.</span>
       </h2>
-      <p class="craft__intro-body">
+      <p class="craft__intro-body" data-i18n="craft.intro">
         Every pair is finished by a single craftsman in our Kyoto atelier.
         Wood is smoked for eight weeks before turning. Brass is forged, not cast.
         Cord is hand-braided from Japanese silk and reinforced with an aramid core —
         the only modern intrusion, and a necessary one.
       </p>
     </div>
-    <div class="micro craft__intro-master">Master &nbsp;—&nbsp; Tarō Hashimoto, since 1998</div>
+    <div class="micro craft__intro-master" data-i18n="craft.master">Master &nbsp;—&nbsp; Tarō Hashimoto, since 1998</div>
   </div>
 
   <div class="craft__materials">
@@ -1103,8 +1105,8 @@ input { font: inherit; }
     <div class="craft__material">
       <div class="craft__material-num serif italic">i.</div>
       <div>
-        <div class="craft__material-name">Wood</div>
-        <p class="craft__material-desc">
+        <div class="craft__material-name" data-i18n="craft.wood">Wood</div>
+        <p class="craft__material-desc" data-i18n="craft.wood.desc">
           Selected from Tohoku oak and Cotswold ash. Air-dried for two seasons,
           smoked over white-oak chips for eight weeks, then turned by hand on a
           treadle lathe and finished with tung oil.
@@ -1116,8 +1118,8 @@ input { font: inherit; }
     <div class="craft__material">
       <div class="craft__material-num serif italic">ii.</div>
       <div>
-        <div class="craft__material-name">Metal</div>
-        <p class="craft__material-desc">
+        <div class="craft__material-name" data-i18n="craft.metal">Metal</div>
+        <p class="craft__material-desc" data-i18n="craft.metal.desc">
           Brass, sterling silver, or blackened steel — sand-cast in Otsu,
           forged by hand, finished to a soft satin patina that deepens with use.
           Each collar is hand-fitted to its specific stick.
@@ -1129,8 +1131,8 @@ input { font: inherit; }
     <div class="craft__material">
       <div class="craft__material-num serif italic">iii.</div>
       <div>
-        <div class="craft__material-name">Cord</div>
-        <p class="craft__material-desc">
+        <div class="craft__material-name" data-i18n="craft.cord">Cord</div>
+        <p class="craft__material-desc" data-i18n="craft.cord.desc">
           Japanese silk in a twelve-strand braid, with a hidden aramid core.
           The result is supple to the hand, silent in motion, and rated to a
           working load well beyond what any practitioner will ever apply.
@@ -1156,34 +1158,34 @@ input { font: inherit; }
     </div>
 
     <div class="master__text">
-      <span class="micro master__label">03 — The master</span>
-      <h2 class="master__name">
+      <span class=”micro master__label” data-i18n=”master.label”>03 — The master</span>
+      <h2 class=”master__name” data-i18n=”master.name”>
         Tarō Hashimoto<br>
-        has finished <span class="it">every pair.</span>
+        has finished <span class=”it”>every pair.</span>
       </h2>
-      <div class="master__bio">
-        <p>
+      <div class=”master__bio”>
+        <p data-i18n=”master.bio1”>
           Born in Nara in 1968, Tarō trained under his grandfather — a maker of
           traditional Japanese garden tools — before working for fourteen years in
           a single-room workshop in Otsu producing scabbards for Bizen sword smiths.
         </p>
-        <p>
+        <p data-i18n=”master.bio2”>
           He began making nunchaku at the request of a single practitioner in 1998.
           Word spread quietly. He has produced fewer than four hundred pairs in his
           career, and signs every piece with a small cinnabar seal applied to the
           inner face of the longer stick.
         </p>
       </div>
-      <p class="master__quote">
+      <p class=”master__quote” data-i18n=”master.quote”>
         “The pair should ask nothing of you. If you have to think about its weight,
         I have failed.”
       </p>
-      <div class="master__seal">
-        <svg viewBox="0 0 48 48" aria-hidden="true">
-          <rect x="2" y="2" width="44" height="44" fill="var(--accent)"/>
-          <text x="24" y="32" text-anchor="middle" fill="#EFEBE3" font-family="serif" font-size="22" font-weight="500">橋</text>
+      <div class=”master__seal”>
+        <svg viewBox=”0 0 48 48” aria-hidden=”true”>
+          <rect x=”2” y=”2” width=”44” height=”44” fill=”var(--accent)”/>
+          <text x=”24” y=”32” text-anchor=”middle” fill=”#EFEBE3” font-family=”serif” font-size=”22” font-weight=”500”>橋</text>
         </svg>
-        <span class="micro">Signature of the master · applied to every pair</span>
+        <span class=”micro” data-i18n=”master.seal”>Signature of the master · applied to every pair</span>
       </div>
     </div>
 
@@ -1196,19 +1198,19 @@ input { font: inherit; }
      ============================================================ -->
 <section class="journal">
   <div class="journal__head">
-    <h2>From the atelier</h2>
-    <a href="/journal" class="cta-text">All entries →</a>
+    <h2 data-i18n="journal.title">From the atelier</h2>
+    <a href="/journal" class="cta-text" data-i18n="journal.all">All entries →</a>
   </div>
   <div class="journal__grid">
 
     <article class="article">
       <div class="article__thumb"></div>
       <div class="article__meta">
-        <span class="micro article__cat">Atelier letter</span>
+        <span class="micro article__cat" data-i18n="journal.cat.atelier">Atelier letter</span>
         <span class="micro article__date">04 · 2026</span>
       </div>
-      <h3 class="article__title">On weight, and the body that learns it</h3>
-      <p class="article__excerpt">
+      <h3 class="article__title" data-i18n="journal.a1.title">On weight, and the body that learns it</h3>
+      <p class="article__excerpt" data-i18n="journal.a1.excerpt">
         Why an extra fifteen grams in the wrong section will be felt for years —
         and how we test for it in the workshop.
       </p>
@@ -1217,11 +1219,11 @@ input { font: inherit; }
     <article class="article">
       <div class="article__thumb"></div>
       <div class="article__meta">
-        <span class="micro article__cat">Materials</span>
+        <span class="micro article__cat" data-i18n="journal.cat.materials">Materials</span>
         <span class="micro article__date">03 · 2026</span>
       </div>
-      <h3 class="article__title">Why we forge brass, instead of casting</h3>
-      <p class="article__excerpt">
+      <h3 class="article__title" data-i18n="journal.a2.title">Why we forge brass, instead of casting</h3>
+      <p class="article__excerpt" data-i18n="journal.a2.excerpt">
         A short defence of the longer, more difficult way — and what it gives back
         in the hand of the practitioner.
       </p>
@@ -1230,11 +1232,11 @@ input { font: inherit; }
     <article class="article">
       <div class="article__thumb"></div>
       <div class="article__meta">
-        <span class="micro article__cat">On form</span>
+        <span class="micro article__cat" data-i18n="journal.cat.form">On form</span>
         <span class="micro article__date">02 · 2026</span>
       </div>
-      <h3 class="article__title">The katasumi method · a brief history</h3>
-      <p class="article__excerpt">
+      <h3 class="article__title" data-i18n="journal.a3.title">The katasumi method · a brief history</h3>
+      <p class="article__excerpt" data-i18n="journal.a3.excerpt">
         Notes on a quiet lineage of Okinawan training, and the object it
         eventually produced.
       </p>
@@ -1249,22 +1251,22 @@ input { font: inherit; }
      ============================================================ -->
 <section class="newsletter">
   <div class="newsletter__left">
-    <span class="micro">The Letter — four times a year</span>
-    <h2>
+    <span class="micro" data-i18n="newsletter.label">The Letter — four times a year</span>
+    <h2 data-i18n="newsletter.title">
       A quiet dispatch on craft, slowness,<br>
       <span class="italic">and the body returning to itself.</span>
     </h2>
   </div>
   <div class="newsletter__right">
-    <p>
+    <p data-i18n="newsletter.pitch">
       Sent four times a year by the atelier. New editions, atelier notes,
       occasional essays. No promotions, no marketing language.
     </p>
     <form class="newsletter__form" onsubmit="event.preventDefault();">
-      <input type="email" placeholder="Your address" required>
-      <button type="submit">Subscribe &nbsp;→</button>
+      <input type="email" data-i18n="newsletter.email" placeholder="Your address" required>
+      <button type="submit" data-i18n="newsletter.submit">Subscribe &nbsp;→</button>
     </form>
-    <p class="micro newsletter__note">We never share your address. Unsubscribe with a single tap.</p>
+    <p class="micro newsletter__note" data-i18n="newsletter.note">We never share your address. Unsubscribe with a single tap.</p>
   </div>
 </section>
 
@@ -1277,38 +1279,38 @@ input { font: inherit; }
     <div class="footer__brand">
       <div class="kanji">二節 &nbsp; NISETSU</div>
       <div class="latin">EST. 2026 · KYOTO</div>
-      <p>
+      <p data-i18n="footer.desc">
         An atelier for hand-made training nunchaku, in editions of 120.
         Kyoto · Manila · Berlin.
       </p>
     </div>
 
     <div class="footer__col">
-      <div class="footer__col-title">Shop</div>
-      <a href="/collection">The collection</a>
-      <a href="/editions">Editions</a>
-      <a href="/cases">Leather cases</a>
-      <a href="/stockists">Stockists</a>
+      <div class="footer__col-title" data-i18n="footer.shop">Shop</div>
+      <a href="/collection" data-i18n="footer.shop.collection">The collection</a>
+      <a href="/editions" data-i18n="footer.shop.editions">Editions</a>
+      <a href="/cases" data-i18n="footer.shop.cases">Leather cases</a>
+      <a href="/stockists" data-i18n="footer.shop.stockists">Stockists</a>
     </div>
 
     <div class="footer__col">
-      <div class="footer__col-title">Atelier</div>
-      <a href="/craft">Our craft</a>
-      <a href="/master">The master</a>
-      <a href="/journal">Journal</a>
-      <a href="/letter">The Letter</a>
+      <div class="footer__col-title" data-i18n="footer.atelier">Atelier</div>
+      <a href="/craft" data-i18n="footer.atelier.craft">Our craft</a>
+      <a href="/master" data-i18n="footer.atelier.master">The master</a>
+      <a href="/journal" data-i18n="footer.atelier.journal">Journal</a>
+      <a href="/letter" data-i18n="footer.atelier.letter">The Letter</a>
     </div>
 
     <div class="footer__col">
-      <div class="footer__col-title">Service</div>
-      <a href="/care">Care &amp; repair</a>
-      <a href="/shipping">Shipping</a>
-      <a href="/returns">Returns</a>
-      <a href="/contact">Contact</a>
+      <div class="footer__col-title" data-i18n="footer.service">Service</div>
+      <a href="/care" data-i18n="footer.service.care">Care &amp; repair</a>
+      <a href="/shipping" data-i18n="footer.service.shipping">Shipping</a>
+      <a href="/returns" data-i18n="footer.service.returns">Returns</a>
+      <a href="/contact" data-i18n="footer.service.contact">Contact</a>
     </div>
 
     <div class="footer__col">
-      <div class="footer__col-title">Follow</div>
+      <div class="footer__col-title" data-i18n="footer.follow">Follow</div>
       <a href="https://instagram.com/nisetsu">Instagram</a>
       <a href="https://t.me/nisetsu">Telegram</a>
       <a href="https://vimeo.com/nisetsu">Vimeo</a>
@@ -1316,15 +1318,16 @@ input { font: inherit; }
 
   </div>
   <div class="footer__bottom">
-    <span>© NISETSU 2026 · Made by hand in Kyoto</span>
+    <span data-i18n="footer.copy">© NISETSU 2026 · Made by hand in Kyoto</span>
     <div class="footer__bottom-links">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="/imprint">Imprint</a>
+      <a href="/privacy" data-i18n="footer.privacy">Privacy</a>
+      <a href="/terms" data-i18n="footer.terms">Terms</a>
+      <a href="/imprint" data-i18n="footer.imprint">Imprint</a>
     </div>
   </div>
 </footer>
 
+<script src="/i18n.js" defer></script>
 <script src="/edit.js" defer></script>
 </body>
 </html>

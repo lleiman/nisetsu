@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NISETSU — Specifications · The geometry of balance</title>
+<meta name="description" content="Technical specifications of NISETSU nunchaku. Handle length, cord geometry, weight distribution, and the research behind ideal balance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/edit.css">
+<style>
+
+:root {
+  --bg: #1A1814;
+  --bg-soft: #221E18;
+  --bg-deeper: #2E2820;
+  --ink: #EFEBE3;
+  --ink-muted: #B5AC9E;
+  --ink-quiet: #8A8175;
+  --ink-faint: #5C5145;
+  --rule: #3A332B;
+  --rule-soft: #2E2820;
+  --accent: #C9622E;
+  --accent-soft: #E07A48;
+  --dark: #0F0D0A;
+  --dark-soft: #1E1A14;
+  --dark-ink: #EFEBE3;
+  --dark-muted: #B5AC9E;
+  --dark-quiet: #8A8175;
+  --wood-kuro: #6B4F36;
+  --wood-shiro: #C9BFA8;
+  --wood-shu: #A53324;
+  --metal-brass: #D4AC6E;
+  --metal-silver: #D5D0C5;
+  --metal-blackened: #5C5045;
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --container: 1320px;
+  --gutter: 36px;
+  --section-pad: 112px;
+}
+
+@media (max-width: 768px) {
+  :root { --gutter: 20px; --section-pad: 64px; }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; border: 0; background: none; cursor: pointer; color: inherit; }
+
+.serif { font-family: var(--font-serif); font-weight: 300; letter-spacing: -0.008em; }
+.italic { font-style: italic; font-weight: 400; }
+.micro { font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 400; line-height: 1.6; }
+
+.rule { border: 0; border-top: 0.5px solid var(--rule); }
+
+/* ---- Utility bar ---- */
+.utility {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px var(--gutter); color: var(--ink-quiet);
+}
+.lang { display: flex; gap: 14px; }
+.lang a { color: var(--ink-faint); transition: color 280ms ease; }
+.lang a:hover, .lang a.active { color: var(--ink); }
+
+/* ---- Nav ---- */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px var(--gutter); max-width: var(--container); margin: 0 auto;
+}
+.nav .left, .nav .right { display: flex; gap: 28px; }
+.nav-link { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 400; color: var(--ink-muted); transition: color 280ms ease; }
+.nav-link:hover { color: var(--accent); }
+.wordmark { text-align: center; }
+.wordmark .kanji { font-family: var(--font-serif); font-size: 22px; letter-spacing: 0.12em; color: var(--ink); }
+.wordmark .latin { color: var(--ink-quiet); margin-top: 2px; }
+
+@media (max-width: 768px) {
+  .nav { flex-direction: column; gap: 16px; }
+  .nav .left, .nav .right { gap: 16px; flex-wrap: wrap; justify-content: center; }
+}
+
+/* ---- Page header ---- */
+.page-header {
+  max-width: var(--container); margin: 0 auto;
+  padding: var(--section-pad) var(--gutter) 64px;
+}
+.page-header__label { color: var(--ink-quiet); margin-bottom: 28px; display: block; }
+.page-header__title {
+  font-family: var(--font-serif); font-weight: 300; font-size: 52px;
+  line-height: 1.08; letter-spacing: -0.012em;
+}
+.page-header__subtitle {
+  color: var(--ink-muted); font-size: 16px; line-height: 1.75;
+  max-width: 640px; margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+  .page-header__title { font-size: 34px; }
+}
+
+/* ---- Specs grid ---- */
+.specs-section {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 var(--gutter) var(--section-pad);
+}
+.specs-section__label {
+  color: var(--ink-quiet); margin-bottom: 44px; display: block;
+}
+.specs-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 0; border-top: 0.5px solid var(--rule);
+}
+.spec-cell {
+  padding: 32px 28px; border-bottom: 0.5px solid var(--rule);
+  border-right: 0.5px solid var(--rule);
+}
+.spec-cell:nth-child(3n) { border-right: 0; }
+.spec-cell__label { color: var(--ink-quiet); margin-bottom: 8px; }
+.spec-cell__value {
+  font-family: var(--font-serif); font-size: 28px; font-weight: 300;
+  letter-spacing: -0.01em; line-height: 1.2;
+}
+.spec-cell__unit { color: var(--ink-muted); font-size: 13px; margin-top: 6px; }
+.spec-cell__note { color: var(--ink-quiet); font-size: 12.5px; margin-top: 10px; line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .specs-grid { grid-template-columns: 1fr 1fr; }
+  .spec-cell:nth-child(3n) { border-right: 0.5px solid var(--rule); }
+  .spec-cell:nth-child(2n) { border-right: 0; }
+}
+@media (max-width: 600px) {
+  .specs-grid { grid-template-columns: 1fr; }
+  .spec-cell { border-right: 0 !important; }
+}
+
+/* ---- Blueprint placeholder ---- */
+.blueprint {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 var(--gutter) var(--section-pad);
+}
+.blueprint__frame {
+  background: var(--dark);
+  border: 0.5px solid var(--rule);
+  aspect-ratio: 16 / 9;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.blueprint__frame--portrait { aspect-ratio: 3 / 4; max-width: 480px; margin: 0 auto; }
+.blueprint__frame--wide { aspect-ratio: 21 / 9; }
+.blueprint__label {
+  color: var(--dark-quiet); text-align: center;
+  z-index: 1;
+}
+.blueprint__sublabel {
+  color: var(--ink-faint); font-size: 12px; margin-top: 8px;
+  text-align: center; z-index: 1; letter-spacing: 0.02em;
+}
+.blueprint__grid {
+  position: absolute; inset: 0; opacity: 0.06;
+  background-image:
+    linear-gradient(var(--ink-quiet) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, var(--ink-quiet) 0.5px, transparent 0.5px);
+  background-size: 40px 40px;
+}
+.blueprint__caption {
+  color: var(--ink-quiet); font-size: 12.5px; margin-top: 18px;
+  text-align: center; line-height: 1.6;
+}
+
+/* ---- Research narrative ---- */
+.narrative {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 var(--gutter) var(--section-pad);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+}
+.narrative__col h3 {
+  font-family: var(--font-serif); font-size: 26px; font-weight: 300;
+  line-height: 1.2; margin-bottom: 24px; letter-spacing: -0.008em;
+}
+.narrative__col p {
+  color: var(--ink-muted); line-height: 1.85; margin-bottom: 18px;
+}
+.narrative__col p:last-child { margin-bottom: 0; }
+.narrative__col .highlight {
+  color: var(--ink); font-family: var(--font-serif); font-size: 16px;
+  font-style: italic; line-height: 1.6; border-left: 1px solid var(--accent);
+  padding-left: 20px; margin: 28px 0;
+}
+
+@media (max-width: 900px) {
+  .narrative { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ---- Comparison table ---- */
+.comparison {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 var(--gutter) var(--section-pad);
+}
+.comparison__label { color: var(--ink-quiet); margin-bottom: 36px; display: block; }
+.comparison table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px; line-height: 1.7;
+}
+.comparison th {
+  text-align: left; padding: 16px 20px;
+  border-bottom: 0.5px solid var(--rule);
+  color: var(--ink-quiet); font-weight: 400;
+  font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
+}
+.comparison td {
+  padding: 16px 20px;
+  border-bottom: 0.5px solid var(--rule-soft);
+  color: var(--ink-muted); vertical-align: top;
+}
+.comparison tr td:first-child {
+  color: var(--ink); font-family: var(--font-serif);
+  font-size: 15px; font-weight: 400;
+}
+.comparison .accent-val { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .comparison { overflow-x: auto; }
+  .comparison table { min-width: 600px; }
+}
+
+/* ---- Materials detail ---- */
+.materials-detail {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 var(--gutter) var(--section-pad);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+}
+.mat-card {
+  padding: 36px 28px; border-right: 0.5px solid var(--rule);
+  border-top: 0.5px solid var(--rule);
+}
+.mat-card:last-child { border-right: 0; }
+.mat-card__num { font-family: var(--font-serif); font-style: italic; font-size: 18px; color: var(--ink-quiet); margin-bottom: 16px; }
+.mat-card__name { font-size: 10.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink); margin-bottom: 16px; }
+.mat-card__props { list-style: none; }
+.mat-card__props li {
+  display: flex; justify-content: space-between;
+  padding: 8px 0; border-bottom: 0.5px solid var(--rule-soft);
+  font-size: 13px; color: var(--ink-muted);
+}
+.mat-card__props li span:first-child { color: var(--ink-quiet); }
+
+@media (max-width: 768px) {
+  .materials-detail { grid-template-columns: 1fr; }
+  .mat-card { border-right: 0; }
+}
+
+/* ---- CTA band ---- */
+.cta-band {
+  max-width: var(--container); margin: 0 auto;
+  padding: var(--section-pad) var(--gutter);
+  text-align: center;
+}
+.cta-band h2 {
+  font-family: var(--font-serif); font-size: 36px; font-weight: 300;
+  line-height: 1.15; margin-bottom: 28px;
+}
+.cta-band .btn {
+  display: inline-block;
+  background: var(--ink); color: var(--bg);
+  padding: 16px 36px;
+  font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  font-weight: 400; transition: background 280ms ease, color 280ms ease;
+}
+.cta-band .btn:hover { background: var(--accent); color: var(--ink); }
+
+/* ---- Footer ---- */
+.footer { background: var(--dark); padding: 80px var(--gutter) 40px; }
+.footer__grid {
+  max-width: var(--container); margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px;
+}
+.footer__brand .kanji { font-family: var(--font-serif); font-size: 20px; letter-spacing: 0.08em; }
+.footer__brand .latin { font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dark-quiet); margin-top: 4px; }
+.footer__brand p { color: var(--dark-muted); font-size: 13px; line-height: 1.7; margin-top: 16px; max-width: 280px; }
+.footer__col { display: flex; flex-direction: column; gap: 10px; }
+.footer__col-title { font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--dark-quiet); margin-bottom: 6px; }
+.footer__col a { color: var(--dark-muted); font-size: 13.5px; transition: color 200ms ease; }
+.footer__col a:hover { color: var(--dark-ink); }
+.footer__bottom {
+  max-width: var(--container); margin: 56px auto 0;
+  padding-top: 24px; border-top: 0.5px solid var(--rule-soft);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 11px; color: var(--dark-quiet);
+}
+.footer__bottom-links { display: flex; gap: 20px; }
+.footer__bottom-links a { color: var(--dark-quiet); transition: color 200ms ease; }
+.footer__bottom-links a:hover { color: var(--dark-muted); }
+
+@media (max-width: 768px) {
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+  .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility">
+  <span class="micro" data-i18n="util.shipping">Complimentary worldwide shipping on editions above $1,500</span>
+  <div class="lang">
+    <a href="#" class="micro active" data-lang="en">EN</a>
+    <a href="#" class="micro" data-lang="ru">RU</a>
+    <a href="#" class="micro" data-lang="zh">中文</a>
+    <a href="#" class="micro" data-lang="ja">JP</a>
+    <a href="#" class="micro" data-lang="id">ID</a>
+  </div>
+</div>
+<hr class="rule">
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="left">
+    <a href="/collection" class="nav-link" data-i18n="nav.collection">Collection</a>
+    <a href="/craft" class="nav-link" data-i18n="nav.craft">Craft</a>
+    <a href="/specifications" class="nav-link" data-i18n="nav.specs">Specifications</a>
+    <a href="/journal" class="nav-link" data-i18n="nav.journal">Journal</a>
+  </div>
+  <a href="/" class="wordmark">
+    <div class="kanji">二節</div>
+    <div class="micro latin">NISETSU · EST. 2026</div>
+  </a>
+  <div class="right">
+    <a href="/search" class="nav-link" data-i18n="nav.search">Search</a>
+    <a href="/account" class="nav-link" data-i18n="nav.account">Account</a>
+    <a href="/cart" class="nav-link" data-i18n="nav.cart">Cart <span style="color: var(--ink-quiet);">(0)</span></a>
+  </div>
+</nav>
+<hr class="rule">
+
+<!-- ============================================================
+     PAGE HEADER
+     ============================================================ -->
+<header class="page-header">
+  <span class="micro page-header__label" data-i18n="specs.label">04 — Technical specifications</span>
+  <h1 class="page-header__title" data-i18n="specs.title">The geometry<br><span class="italic">of balance.</span></h1>
+  <p class="page-header__subtitle" data-i18n="specs.subtitle">
+    Every dimension in a NISETSU pair is the result of twenty-six years of iterative refinement.
+    The numbers below are not arbitrary — they are the convergence point where the object
+    disappears from consciousness and only the practice remains.
+  </p>
+</header>
+<hr class="rule">
+
+<!-- ============================================================
+     PRIMARY SPECS GRID
+     ============================================================ -->
+<section class="specs-section">
+  <span class="micro specs-section__label" data-i18n="specs.dimensions">Dimensions</span>
+  <div class="specs-grid">
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.handle.label">Handle length</div>
+      <div class="spec-cell__value">30 <span style="font-size:18px; color: var(--ink-muted);">cm</span></div>
+      <div class="spec-cell__note" data-i18n="specs.handle.note">
+        Each section (kon). Measured tip-to-tip excluding hardware.
+        The 30 cm standard derives from the Okinawan forearm-plus-fist rule (shinogi):
+        the handle should equal the distance from elbow to closed fist.
+        This covers the 5th-to-95th percentile of adult practitioners.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.diameter.label">Handle diameter</div>
+      <div class="spec-cell__value">3.0 <span style="font-size:18px; color: var(--ink-muted);">cm</span></div>
+      <div class="spec-cell__note" data-i18n="specs.diameter.note">
+        Mid-grip measurement. Gentle 1.8 mm taper from chain-end (3.0 cm) to butt-end (2.82 cm).
+        Octagonal cross-section (happo-gata) for rotational grip reference
+        without the fatigue of a sharp-edged square profile.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.cord.label">Cord length</div>
+      <div class="spec-cell__value">18 <span style="font-size:18px; color: var(--ink-muted);">cm</span></div>
+      <div class="spec-cell__note" data-i18n="specs.cord.note">
+        Free cord between attachment points. The traditional "one-fist" rule
+        (hito-kobushi) sets the cord at the width of the closed hand, typically 10-12 cm.
+        NISETSU extends to 18 cm for the flowing "figure-eight" practice style (kaiten),
+        which demands a longer arc radius for clean passes behind the back and under the arm.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.total.label">Total extended length</div>
+      <div class="spec-cell__value">78 <span style="font-size:18px; color: var(--ink-muted);">cm</span></div>
+      <div class="spec-cell__note" data-i18n="specs.total.note">
+        Full reach when held at one end and fully extended.
+        30 cm handle + 18 cm cord + 30 cm handle = 78 cm.
+        Ratio of handle:cord:handle is 5:3:5 — the golden proportion for
+        a pendulum-stable system that returns predictably to center.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.weight.label">Total weight</div>
+      <div class="spec-cell__value">340 <span style="font-size:18px; color: var(--ink-muted);">g</span></div>
+      <div class="spec-cell__note" data-i18n="specs.weight.note">
+        Complete pair including cord and hardware. The optimal training weight
+        sits between 280 g (too light — wrist compensates, encourages sloppy arcs)
+        and 420 g (too heavy — shoulder fatigues, shortens practice sessions).
+        340 g is the point where centripetal force during a full-speed pass
+        matches comfortable wrist pronation torque.
+      </div>
+    </div>
+
+    <div class="spec-cell">
+      <div class="micro spec-cell__label" data-i18n="specs.balance.label">Balance point</div>
+      <div class="spec-cell__value">40% <span style="font-size:18px; color: var(--ink-muted);"></span></div>
+      <div class="spec-cell__note" data-i18n="specs.balance.note">
+        Center of gravity at 40% from the cord end of each handle (12 cm from top).
+        This shifts mass toward the striking tip, increasing rotational inertia
+        for smoother sustained rotation while keeping the grip zone light enough
+        for rapid directional changes.
+      </div>
+    </div>
+
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     BLUEPRINT: EXPLODED DIAGRAM
+     ============================================================ -->
+<section class="blueprint">
+  <div class="blueprint__frame">
+    <div class="blueprint__grid"></div>
+    <span class="micro blueprint__label" data-i18n="specs.bp1.label">Technical drawing · Exploded view</span>
+    <span class="blueprint__sublabel" data-i18n="specs.bp1.sub">
+      Exploded diagram showing handle cross-section, collar assembly,<br>
+      cord routing through the swivel, and taper profile.<br>
+      — Placeholder for commissioned technical illustration —
+    </span>
+  </div>
+  <p class="blueprint__caption" data-i18n="specs.bp1.caption">
+    Fig. 03 · Exploded assembly view. Each collar is friction-fitted (no adhesive)
+    and secured with a single brass pin. The cord passes through a countersunk channel
+    in the handle tip and terminates in a figure-eight stopper knot below the swivel.
+  </p>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     RESEARCH NARRATIVE: WHY THESE NUMBERS
+     ============================================================ -->
+<section class="narrative">
+  <div class="narrative__col">
+    <h3 data-i18n="specs.research.handle.title">The handle:<br><span class="italic">why 30 cm, not 28.</span></h3>
+    <p data-i18n="specs.research.handle.p1">
+      Most mass-produced nunchaku use a 28 cm handle — a dimension inherited from
+      post-war Okinawan competition equipment, optimized for speed in point-scoring kata.
+      But speed without control is noise. The additional 2 cm shifts the moment of inertia
+      by approximately 9%, which translates to a slower, more predictable rotational arc.
+    </p>
+    <p data-i18n="specs.research.handle.p2">
+      For the practitioner who trains daily, this difference compounds. The wrist learns
+      a wider arc. Transitions between passes become smoother. The body stops fighting
+      the object and begins to follow it.
+    </p>
+    <div class="highlight" data-i18n="specs.research.handle.quote">
+      "Two centimeters is nothing in the hand. It is everything in the arc."
+      — Tarō Hashimoto
+    </div>
+  </div>
+
+  <div class="narrative__col">
+    <h3 data-i18n="specs.research.cord.title">The cord:<br><span class="italic">silk over chain.</span></h3>
+    <p data-i18n="specs.research.cord.p1">
+      Chain (kusari) nunchaku are louder, faster, and unforgiving.
+      Cord (himo) nunchaku absorb energy at the moment of impact and create
+      a natural deceleration curve. For training — for the daily return to the object —
+      cord is the correct choice. It protects the practitioner and rewards precision
+      over force.
+    </p>
+    <p data-i18n="specs.research.cord.p2">
+      NISETSU uses a twelve-strand round braid of Japanese bombyx mori silk.
+      The natural protein fiber has an elongation at break of 18-20%, meaning
+      it absorbs shock gradually rather than transmitting it directly to the wrist.
+      A hidden aramid (Kevlar) core adds 2,800 N of tensile strength —
+      roughly 285 kg of pulling force — while contributing only 4 g to the
+      total cord weight.
+    </p>
+    <div class="highlight" data-i18n="specs.research.cord.quote">
+      Silk elongation: 18-20% at break. Chain elongation: 0%.
+      The difference is felt in the wrist after one hour.
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     BLUEPRINT: CROSS-SECTION
+     ============================================================ -->
+<section class="blueprint">
+  <div class="blueprint__frame blueprint__frame--portrait">
+    <div class="blueprint__grid"></div>
+    <span class="micro blueprint__label" data-i18n="specs.bp2.label">Technical drawing · Handle cross-section</span>
+    <span class="blueprint__sublabel" data-i18n="specs.bp2.sub">
+      Octagonal (happo-gata) profile with chamfered edges,<br>
+      showing grain direction, collar seat, and cord channel.<br>
+      — Placeholder for commissioned technical illustration —
+    </span>
+  </div>
+  <p class="blueprint__caption" data-i18n="specs.bp2.caption">
+    Fig. 04 · Handle cross-section at mid-grip (15 cm from cord end).
+    The octagonal profile provides eight tactile reference planes for rotational awareness
+    without the discomfort of sharp edges during sustained spinning.
+  </p>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     COMPARISON TABLE: THREE MODELS
+     ============================================================ -->
+<section class="comparison">
+  <span class="micro comparison__label" data-i18n="specs.compare.label">Comparison across models</span>
+  <table>
+    <thead>
+      <tr>
+        <th data-i18n="specs.compare.parameter">Parameter</th>
+        <th>黒 Kuro</th>
+        <th>白 Shiro</th>
+        <th>朱 Shu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-i18n="specs.compare.wood">Wood species</td>
+        <td data-i18n="specs.compare.kuro.wood">Tohoku oak (Quercus crispula)</td>
+        <td data-i18n="specs.compare.shiro.wood">Cotswold ash (Fraxinus excelsior)</td>
+        <td data-i18n="specs.compare.shu.wood">Bloodwood (Brosimum rubescens)</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.density">Wood density</td>
+        <td>0.68 g/cm³</td>
+        <td>0.65 g/cm³</td>
+        <td class="accent-val">0.91 g/cm³</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.handlew">Handle weight (each)</td>
+        <td>142 g</td>
+        <td>136 g</td>
+        <td>158 g</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.totalw">Total weight</td>
+        <td>340 g</td>
+        <td>326 g</td>
+        <td class="accent-val">374 g</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.hardware">Hardware</td>
+        <td data-i18n="specs.compare.kuro.hw">Hand-forged brass</td>
+        <td data-i18n="specs.compare.shiro.hw">Sterling silver (.925)</td>
+        <td data-i18n="specs.compare.shu.hw">Blackened carbon steel</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.hwweight">Hardware weight</td>
+        <td>28 g</td>
+        <td>24 g</td>
+        <td>30 g</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.cordtype">Cord</td>
+        <td data-i18n="specs.compare.kuro.cord">Black silk, aramid core</td>
+        <td data-i18n="specs.compare.shiro.cord">Ivory silk, aramid core</td>
+        <td data-i18n="specs.compare.shu.cord">Oxblood kangaroo leather</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.cordw">Cord weight</td>
+        <td>12 g</td>
+        <td>12 g</td>
+        <td>16 g</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.finish">Surface finish</td>
+        <td data-i18n="specs.compare.kuro.finish">Smoked 8 weeks + tung oil</td>
+        <td data-i18n="specs.compare.shiro.finish">Bleached + beeswax polish</td>
+        <td data-i18n="specs.compare.shu.finish">Natural oil + hand-buffed</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.balpt">Balance point</td>
+        <td>40% from top</td>
+        <td>42% from top</td>
+        <td>38% from top</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.moi">Moment of inertia</td>
+        <td>0.0031 kg·m²</td>
+        <td>0.0029 kg·m²</td>
+        <td class="accent-val">0.0035 kg·m²</td>
+      </tr>
+      <tr>
+        <td data-i18n="specs.compare.tensile">Cord tensile strength</td>
+        <td>2,800 N</td>
+        <td>2,800 N</td>
+        <td>3,200 N</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     MATERIALS SCIENCE
+     ============================================================ -->
+<section class="materials-detail">
+  <div class="mat-card">
+    <div class="mat-card__num serif italic">i.</div>
+    <div class="micro mat-card__name" data-i18n="specs.mat.oak">Tohoku oak · 黒 Kuro</div>
+    <ul class="mat-card__props">
+      <li><span data-i18n="specs.mat.species">Species</span><span>Quercus crispula</span></li>
+      <li><span data-i18n="specs.mat.origin">Origin</span><span>Iwate, Japan</span></li>
+      <li><span data-i18n="specs.mat.density">Density</span><span>0.68 g/cm³</span></li>
+      <li><span data-i18n="specs.mat.janka">Janka hardness</span><span>5,990 N</span></li>
+      <li><span data-i18n="specs.mat.drying">Drying</span><span data-i18n="specs.mat.oak.drying">Air-dried 2 seasons</span></li>
+      <li><span data-i18n="specs.mat.smoking">Smoking</span><span data-i18n="specs.mat.oak.smoking">8 weeks, white oak</span></li>
+      <li><span data-i18n="specs.mat.finishing">Finish</span><span data-i18n="specs.mat.oak.finish">Tung oil, 4 coats</span></li>
+    </ul>
+  </div>
+
+  <div class="mat-card">
+    <div class="mat-card__num serif italic">ii.</div>
+    <div class="micro mat-card__name" data-i18n="specs.mat.ash">Cotswold ash · 白 Shiro</div>
+    <ul class="mat-card__props">
+      <li><span data-i18n="specs.mat.species">Species</span><span>Fraxinus excelsior</span></li>
+      <li><span data-i18n="specs.mat.origin">Origin</span><span>Gloucestershire, UK</span></li>
+      <li><span data-i18n="specs.mat.density">Density</span><span>0.65 g/cm³</span></li>
+      <li><span data-i18n="specs.mat.janka">Janka hardness</span><span>5,870 N</span></li>
+      <li><span data-i18n="specs.mat.drying">Drying</span><span data-i18n="specs.mat.ash.drying">Air-dried 2 seasons</span></li>
+      <li><span data-i18n="specs.mat.treatment">Treatment</span><span data-i18n="specs.mat.ash.treatment">Hydrogen peroxide bleach</span></li>
+      <li><span data-i18n="specs.mat.finishing">Finish</span><span data-i18n="specs.mat.ash.finish">Beeswax, hand-buffed</span></li>
+    </ul>
+  </div>
+
+  <div class="mat-card">
+    <div class="mat-card__num serif italic">iii.</div>
+    <div class="micro mat-card__name" data-i18n="specs.mat.blood">Bloodwood · 朱 Shu</div>
+    <ul class="mat-card__props">
+      <li><span data-i18n="specs.mat.species">Species</span><span>Brosimum rubescens</span></li>
+      <li><span data-i18n="specs.mat.origin">Origin</span><span>Suriname (FSC)</span></li>
+      <li><span data-i18n="specs.mat.density">Density</span><span>0.91 g/cm³</span></li>
+      <li><span data-i18n="specs.mat.janka">Janka hardness</span><span>10,740 N</span></li>
+      <li><span data-i18n="specs.mat.drying">Drying</span><span data-i18n="specs.mat.blood.drying">Kiln-dried, slow cycle</span></li>
+      <li><span data-i18n="specs.mat.treatment">Treatment</span><span data-i18n="specs.mat.blood.treatment">None (natural resin)</span></li>
+      <li><span data-i18n="specs.mat.finishing">Finish</span><span data-i18n="specs.mat.blood.finish">Danish oil, 6 coats</span></li>
+    </ul>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     BLUEPRINT: WEIGHT DISTRIBUTION
+     ============================================================ -->
+<section class="blueprint">
+  <div class="blueprint__frame blueprint__frame--wide">
+    <div class="blueprint__grid"></div>
+    <span class="micro blueprint__label" data-i18n="specs.bp3.label">Technical drawing · Weight distribution map</span>
+    <span class="blueprint__sublabel" data-i18n="specs.bp3.sub">
+      Side-by-side comparison of weight distribution across all three models.<br>
+      Showing center of gravity, moment of inertia axis, and pendulum swing radius.<br>
+      — Placeholder for commissioned technical illustration —
+    </span>
+  </div>
+  <p class="blueprint__caption" data-i18n="specs.bp3.caption">
+    Fig. 05 · The Shu model, with its denser bloodwood handles and steel hardware,
+    has a 10% higher moment of inertia than the Kuro. This produces a noticeably slower,
+    more deliberate rotational arc — preferred by practitioners who train in Okinawan
+    classical forms (kobudo). The lighter Shiro is tuned for the faster, more fluid
+    Southeast Asian styles.
+  </p>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     CORD ENGINEERING
+     ============================================================ -->
+<section class="narrative">
+  <div class="narrative__col">
+    <h3 data-i18n="specs.cord.eng.title">Cord engineering:<br><span class="italic">the invisible core.</span></h3>
+    <p data-i18n="specs.cord.eng.p1">
+      The visible outer braid is 100% bombyx mori silk, sourced from a single
+      cooperative in Gunma prefecture. Twelve strands are braided in a round
+      kumihimo pattern on a traditional marudai stand — the same technique used
+      for samurai sword wrapping (tsuka-ito) since the Kamakura period.
+    </p>
+    <p data-i18n="specs.cord.eng.p2">
+      Inside the silk braid sits a single 1.5 mm aramid (Kevlar 49) core.
+      This is the only concession to modernity in the entire object. It adds
+      a tensile strength of 2,800 N (285 kg pulling force) while contributing
+      only 4 grams. The aramid is invisible and unfelt — it exists solely
+      as a safety margin.
+    </p>
+  </div>
+
+  <div class="narrative__col">
+    <h3 data-i18n="specs.cord.attach.title">Attachment system:<br><span class="italic">friction, not adhesive.</span></h3>
+    <p data-i18n="specs.cord.attach.p1">
+      The cord enters the handle through a countersunk 6 mm bore in the tip,
+      passes over a polished brass (or silver, or steel) bearing surface,
+      and terminates in a figure-eight stopper knot below the collar.
+      The collar itself is friction-fitted with a 0.02 mm interference fit
+      and secured with a single 1.8 mm brass pin.
+    </p>
+    <p data-i18n="specs.cord.attach.p2">
+      No adhesive is used anywhere in the assembly. Every component can be
+      disassembled, inspected, and replaced by the master. This is the
+      foundation of NISETSU's lifetime restoration promise: the cord will
+      be re-braided and the finish renewed as many times as the owner
+      returns the pair to the atelier.
+    </p>
+    <div class="highlight" data-i18n="specs.cord.attach.quote">
+      Zero adhesive. Zero permanent joins. Every part is replaceable —
+      the object is designed to outlive its maker.
+    </div>
+  </div>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     BLUEPRINT: CORD ASSEMBLY
+     ============================================================ -->
+<section class="blueprint">
+  <div class="blueprint__frame">
+    <div class="blueprint__grid"></div>
+    <span class="micro blueprint__label" data-i18n="specs.bp4.label">Technical drawing · Cord and collar assembly</span>
+    <span class="blueprint__sublabel" data-i18n="specs.bp4.sub">
+      Detail of the cord routing through the collar: bore, bearing surface,<br>
+      stopper knot, pin location, and friction-fit tolerance.<br>
+      — Placeholder for commissioned technical illustration —
+    </span>
+  </div>
+  <p class="blueprint__caption" data-i18n="specs.bp4.caption">
+    Fig. 06 · Collar-to-cord detail. The 0.02 mm interference fit means
+    each collar must be individually turned and tested against its specific handle.
+    Production collars are not interchangeable between pairs.
+  </p>
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     CTA BAND
+     ============================================================ -->
+<section class="cta-band">
+  <h2 data-i18n="specs.cta.title">Numbers describe.<br><span class="italic">The hand decides.</span></h2>
+  <a href="/collection" class="btn" data-i18n="specs.cta.btn">View the collection &nbsp;→</a>
+</section>
+<hr class="rule">
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__grid">
+    <div class="footer__brand">
+      <div class="kanji">二節 &nbsp; NISETSU</div>
+      <div class="latin">EST. 2026 · KYOTO</div>
+      <p data-i18n="footer.desc">An atelier for hand-made training nunchaku, in editions of 120. Kyoto · Manila · Berlin.</p>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title" data-i18n="footer.shop">Shop</div>
+      <a href="/collection" data-i18n="footer.shop.collection">The collection</a>
+      <a href="/editions" data-i18n="footer.shop.editions">Editions</a>
+      <a href="/cases" data-i18n="footer.shop.cases">Leather cases</a>
+      <a href="/stockists" data-i18n="footer.shop.stockists">Stockists</a>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title" data-i18n="footer.atelier">Atelier</div>
+      <a href="/craft" data-i18n="footer.atelier.craft">Our craft</a>
+      <a href="/master" data-i18n="footer.atelier.master">The master</a>
+      <a href="/journal" data-i18n="footer.atelier.journal">Journal</a>
+      <a href="/letter" data-i18n="footer.atelier.letter">The Letter</a>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title" data-i18n="footer.service">Service</div>
+      <a href="/care" data-i18n="footer.service.care">Care &amp; repair</a>
+      <a href="/shipping" data-i18n="footer.service.shipping">Shipping</a>
+      <a href="/returns" data-i18n="footer.service.returns">Returns</a>
+      <a href="/contact" data-i18n="footer.service.contact">Contact</a>
+    </div>
+    <div class="footer__col">
+      <div class="footer__col-title" data-i18n="footer.follow">Follow</div>
+      <a href="https://instagram.com/nisetsu">Instagram</a>
+      <a href="https://t.me/nisetsu">Telegram</a>
+      <a href="https://vimeo.com/nisetsu">Vimeo</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span data-i18n="footer.copy">© NISETSU 2026 · Made by hand in Kyoto</span>
+    <div class="footer__bottom-links">
+      <a href="/privacy" data-i18n="footer.privacy">Privacy</a>
+      <a href="/terms" data-i18n="footer.terms">Terms</a>
+      <a href="/imprint" data-i18n="footer.imprint">Imprint</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/i18n.js" defer></script>
+<script src="/edit.js" defer></script>
+</body>
+</html>
