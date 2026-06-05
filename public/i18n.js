@@ -859,8 +859,25 @@
 
 
   /* ================================================================
-     ENGINE
+     ENGINE — zero-artifact language switching
      ================================================================ */
+
+  // Pre-index: build a map of elements once, not on every switch
+  let elMap = null;   // { key: [el, ...] }
+  let inputMap = null; // { key: [el, ...] }
+
+  function buildIndex() {
+    elMap = {};
+    inputMap = {};
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.dataset.i18n;
+      if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
+        (inputMap[key] || (inputMap[key] = [])).push(el);
+      } else {
+        (elMap[key] || (elMap[key] = [])).push(el);
+      }
+    });
+  }
 
   function getLang() {
     return localStorage.getItem('nisetsu_lang')
@@ -868,29 +885,86 @@
       || DEFAULT;
   }
 
+  // Inject the transition style once
+  const FADE_MS = 120;
+  const styleEl = document.createElement('style');
+  styleEl.textContent = `
+    body.nisetsu-i18n-fade {
+      opacity: 0 !important;
+      transition: opacity ${FADE_MS}ms cubic-bezier(0.4, 0, 1, 1) !important;
+    }
+    body.nisetsu-i18n-show {
+      transition: opacity ${FADE_MS}ms cubic-bezier(0, 0, 0.2, 1) !important;
+    }
+  `;
+  document.head.appendChild(styleEl);
+
+  let switching = false;
+
   function setLang(lang) {
-    if (!LANGS.includes(lang)) return;
+    if (!LANGS.includes(lang) || switching) return;
+    const current = getLang();
+    if (lang === current) return;
+
     localStorage.setItem('nisetsu_lang', lang);
     document.cookie = `nisetsu_lang=${lang};path=/;max-age=${365 * 86400};SameSite=Lax`;
-    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
-    apply(lang);
     updateSwitcher(lang);
+
+    // If same as HTML default and it's the first load, just apply instantly
+    switching = true;
+
+    // Phase 1: fade out
+    document.body.classList.add('nisetsu-i18n-fade');
+
+    // Phase 2: after fade-out completes, swap all text in one rAF, then fade in
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        applyBatch(lang);
+        document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
+
+        // Phase 3: fade in
+        document.body.classList.remove('nisetsu-i18n-fade');
+        document.body.classList.add('nisetsu-i18n-show');
+
+        setTimeout(() => {
+          document.body.classList.remove('nisetsu-i18n-show');
+          switching = false;
+        }, FADE_MS);
+      });
+    }, FADE_MS);
   }
 
-  function apply(lang) {
-    document.querySelectorAll('[data-i18n]').forEach((el) => {
-      const key = el.dataset.i18n;
+  function applyBatch(lang) {
+    if (!elMap) buildIndex();
+
+    // Batch all DOM writes — no interleaved reads
+    for (const key in elMap) {
       const entry = T[key];
-      if (!entry) return;
+      if (!entry) continue;
       const text = entry[lang] || entry[DEFAULT];
-      if (text == null) return;
-      // placeholders on <input>
-      if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
-        el.placeholder = text;
-        return;
+      if (text == null) continue;
+      const els = elMap[key];
+      for (let i = 0; i < els.length; i++) {
+        els[i].innerHTML = text;
       }
-      el.innerHTML = text;
-    });
+    }
+    for (const key in inputMap) {
+      const entry = T[key];
+      if (!entry) continue;
+      const text = entry[lang] || entry[DEFAULT];
+      if (text == null) continue;
+      const els = inputMap[key];
+      for (let i = 0; i < els.length; i++) {
+        els[i].placeholder = text;
+      }
+    }
+  }
+
+  // Silent apply — no transition, used on initial page load
+  function applySilent(lang) {
+    if (!elMap) buildIndex();
+    applyBatch(lang);
+    document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
   }
 
   function updateSwitcher(lang) {
@@ -900,6 +974,8 @@
   }
 
   function init() {
+    buildIndex();
+
     // Bind switcher clicks
     document.querySelectorAll('.lang a[data-lang]').forEach((a) => {
       a.addEventListener('click', (e) => {
@@ -910,8 +986,7 @@
 
     const lang = getLang();
     if (lang !== DEFAULT) {
-      document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : lang;
-      apply(lang);
+      applySilent(lang);
     }
     updateSwitcher(lang);
   }
