@@ -264,6 +264,75 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
   .mat-card { border-right: 0; }
 }
 
+/* ---- Type selector hero ---- */
+.type-hero {
+  max-width: var(--container); margin: 0 auto;
+  padding: 0 var(--gutter) var(--section-pad);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+}
+.type-card {
+  padding: 56px 44px;
+  border: 0.5px solid var(--rule);
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  transition: background 400ms ease;
+  cursor: default;
+  position: relative;
+}
+.type-card:first-child { border-right: 0; }
+.type-card:hover { background: var(--bg-soft); }
+.type-card__badge {
+  position: absolute; top: 22px; right: 26px;
+  color: var(--accent); font-size: 10.5px; letter-spacing: 0.26em;
+  text-transform: uppercase; font-weight: 400;
+}
+.type-card__visual {
+  width: 100%; max-width: 280px;
+  aspect-ratio: 3 / 4;
+  background: var(--dark);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 36px;
+  position: relative; overflow: hidden;
+}
+.type-card__visual .blueprint__grid {
+  position: absolute; inset: 0; opacity: 0.05;
+  background-image:
+    linear-gradient(var(--ink-quiet) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, var(--ink-quiet) 0.5px, transparent 0.5px);
+  background-size: 32px 32px;
+}
+.type-card__kanji {
+  font-family: var(--font-serif); font-size: 18px;
+  color: var(--ink-quiet); letter-spacing: 0.12em; margin-bottom: 8px;
+}
+.type-card__name {
+  font-family: var(--font-serif); font-size: 32px; font-weight: 300;
+  line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 12px;
+}
+.type-card__desc {
+  color: var(--ink-muted); font-size: 13.5px; line-height: 1.75;
+  max-width: 320px; margin-bottom: 28px;
+}
+.type-card__stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px 28px;
+  text-align: left; width: 100%; max-width: 320px;
+}
+.type-card__stat-label { color: var(--ink-quiet); font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; }
+.type-card__stat-value { font-family: var(--font-serif); font-size: 20px; font-weight: 300; margin-top: 2px; }
+.type-card__link {
+  margin-top: 32px;
+  font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ink-muted);
+  transition: color 280ms ease;
+}
+.type-card__link:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .type-hero { grid-template-columns: 1fr; }
+  .type-card:first-child { border-right: 0.5px solid var(--rule); border-bottom: 0; }
+  .type-card { padding: 40px 28px; }
+}
+
 /* ---- CTA band ---- */
 .cta-band {
   max-width: var(--container); margin: 0 auto;
@@ -363,10 +432,124 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 <hr class="rule">
 
 <!-- ============================================================
-     PRIMARY SPECS GRID
+     TYPE SELECTOR — Himo vs Kusari visual comparison
      ============================================================ -->
-<section class="specs-section">
-  <span class="micro specs-section__label" data-i18n="specs.dimensions">Dimensions</span>
+<section class="type-hero">
+
+  <!-- HIMO (cord) card -->
+  <div class="type-card">
+    <span class="micro type-card__badge" data-i18n="specs.type.himo.badge">Training</span>
+    <div class="type-card__visual" data-nedit-image>
+      <div class="blueprint__grid"></div>
+      <!-- Himo silhouette: cord connecting two handles -->
+      <svg viewBox="0 0 160 280" style="width: 44%; height: auto;" aria-hidden="true">
+        <rect x="40" y="12" width="18" height="200" rx="9" fill="var(--wood-kuro)"/>
+        <rect x="40" y="28" width="18" height="2" fill="var(--metal-brass)"/>
+        <rect x="40" y="200" width="18" height="2" fill="var(--metal-brass)"/>
+        <rect x="40" y="206" width="18" height="4" fill="var(--metal-brass)"/>
+        <rect x="102" y="64" width="18" height="200" rx="9" fill="var(--wood-kuro)"/>
+        <rect x="102" y="80" width="18" height="2" fill="var(--metal-brass)"/>
+        <rect x="102" y="252" width="18" height="2" fill="var(--metal-brass)"/>
+        <rect x="102" y="64" width="18" height="4" fill="var(--metal-brass)"/>
+        <!-- Silk cord (flowing curve) -->
+        <path d="M58 16 C64 24, 72 36, 80 44 C88 52, 96 58, 102 68"
+              fill="none" stroke="var(--ink-quiet)" stroke-width="2.2"
+              stroke-linecap="round" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="type-card__kanji">紐</div>
+    <div class="type-card__name" data-i18n="specs.type.himo.name">Himo · <span class="italic">Cord</span></div>
+    <p class="type-card__desc" data-i18n="specs.type.himo.desc">
+      Twelve-strand silk braid with aramid core. The cord absorbs energy gradually,
+      creating a forgiving deceleration curve. Designed for daily training,
+      flow practice, and the body that returns to the object.
+    </p>
+    <div class="type-card__stats">
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.handle">Handle</div>
+        <div class="type-card__stat-value">30 cm</div>
+      </div>
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.connector">Connector</div>
+        <div class="type-card__stat-value">18 cm</div>
+      </div>
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.weight">Weight</div>
+        <div class="type-card__stat-value">340 g</div>
+      </div>
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.impact">Impact</div>
+        <div class="type-card__stat-value">~47 J</div>
+      </div>
+    </div>
+    <a href="#himo-specs" class="type-card__link" data-i18n="specs.type.himo.link">Full himo specifications ↓</a>
+  </div>
+
+  <!-- KUSARI (chain) card -->
+  <div class="type-card">
+    <span class="micro type-card__badge" data-i18n="specs.type.kusari.badge">Combat</span>
+    <div class="type-card__visual" data-nedit-image>
+      <div class="blueprint__grid"></div>
+      <!-- Kusari silhouette: chain links connecting two handles -->
+      <svg viewBox="0 0 160 280" style="width: 44%; height: auto;" aria-hidden="true">
+        <rect x="40" y="12" width="18" height="190" rx="9" fill="var(--wood-kuro)"/>
+        <rect x="40" y="26" width="18" height="2" fill="var(--metal-blackened)"/>
+        <rect x="40" y="190" width="18" height="2" fill="var(--metal-blackened)"/>
+        <rect x="40" y="196" width="18" height="5" fill="var(--metal-blackened)"/>
+        <rect x="102" y="74" width="18" height="190" rx="9" fill="var(--wood-kuro)"/>
+        <rect x="102" y="88" width="18" height="2" fill="var(--metal-blackened)"/>
+        <rect x="102" y="252" width="18" height="2" fill="var(--metal-blackened)"/>
+        <rect x="102" y="74" width="18" height="5" fill="var(--metal-blackened)"/>
+        <!-- Chain links (rigid, angular) -->
+        <ellipse cx="58" cy="14" rx="4" ry="6" fill="none" stroke="var(--metal-blackened)" stroke-width="2.5"/>
+        <ellipse cx="66" cy="26" rx="6" ry="4" fill="none" stroke="var(--metal-blackened)" stroke-width="2.5"/>
+        <ellipse cx="74" cy="38" rx="4" ry="6" fill="none" stroke="var(--metal-blackened)" stroke-width="2.5"/>
+        <ellipse cx="82" cy="50" rx="6" ry="4" fill="none" stroke="var(--metal-blackened)" stroke-width="2.5"/>
+        <ellipse cx="90" cy="62" rx="4" ry="6" fill="none" stroke="var(--metal-blackened)" stroke-width="2.5"/>
+        <ellipse cx="98" cy="74" rx="6" ry="4" fill="none" stroke="var(--metal-blackened)" stroke-width="2.5"/>
+        <ellipse cx="104" cy="78" rx="4" ry="6" fill="none" stroke="var(--metal-blackened)" stroke-width="2.5"/>
+        <!-- Swivel indicators -->
+        <circle cx="49" cy="8" r="5" fill="none" stroke="var(--metal-blackened)" stroke-width="1.5"/>
+        <circle cx="111" cy="70" r="5" fill="none" stroke="var(--metal-blackened)" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="type-card__kanji">鎖</div>
+    <div class="type-card__name" data-i18n="specs.type.kusari.name">Kusari · <span class="italic">Chain</span></div>
+    <p class="type-card__desc" data-i18n="specs.type.kusari.desc">
+      Seven-link forged chromoly chain with ball-bearing swivels.
+      Zero elongation — 100% energy transfer at the endpoint.
+      Built for Okinawan kobudo and classical combat forms
+      where the weapon is expected to strike.
+    </p>
+    <div class="type-card__stats">
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.handle">Handle</div>
+        <div class="type-card__stat-value">28 cm</div>
+      </div>
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.connector">Connector</div>
+        <div class="type-card__stat-value">14 cm</div>
+      </div>
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.weight">Weight</div>
+        <div class="type-card__stat-value">480 g</div>
+      </div>
+      <div>
+        <div class="type-card__stat-label" data-i18n="specs.type.impact">Impact</div>
+        <div class="type-card__stat-value">~62 J</div>
+      </div>
+    </div>
+    <a href="#kusari-specs" class="type-card__link" data-i18n="specs.type.kusari.link">Full kusari specifications ↓</a>
+  </div>
+
+</section>
+<hr class="rule">
+
+<!-- ============================================================
+     PRIMARY SPECS GRID — HIMO
+     ============================================================ -->
+<section class="specs-section" id="himo-specs">
+  <span class="micro specs-section__label" data-i18n="specs.himo.section">紐 Himo · Training dimensions</span>
   <div class="specs-grid">
 
     <div class="spec-cell">
@@ -761,7 +944,7 @@ button { font: inherit; border: 0; background: none; cursor: pointer; color: inh
 <!-- ============================================================
      KUSARI · COMBAT SERIES
      ============================================================ -->
-<header class="page-header" style="padding-top: 80px;">
+<header class="page-header" style="padding-top: 80px;" id="kusari-specs">
   <span class="micro page-header__label" data-i18n="specs.kusari.label">05 — Combat series · 鎖 Kusari</span>
   <h1 class="page-header__title" data-i18n="specs.kusari.title">The chain<br><span class="italic">changes everything.</span></h1>
   <p class="page-header__subtitle" data-i18n="specs.kusari.subtitle">

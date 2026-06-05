@@ -857,6 +857,69 @@
     },
 
     /* ================================================================
+       TYPE SELECTOR HERO
+       ================================================================ */
+
+    'specs.type.himo.badge': {
+      en: 'Training', ru: 'Тренировочные', zh: '训练', ja: '稽古用', id: 'Latihan',
+    },
+    'specs.type.kusari.badge': {
+      en: 'Combat', ru: 'Боевые', zh: '实战', ja: '実戦用', id: 'Tempur',
+    },
+    'specs.type.himo.name': {
+      en: 'Himo · <span class="italic">Cord</span>',
+      ru: 'Химо · <span class="italic">Шнур</span>',
+      zh: '紐 · <span class="italic">绳</span>',
+      ja: '紐 · <span class="italic">ひも</span>',
+      id: 'Himo · <span class="italic">Tali</span>',
+    },
+    'specs.type.kusari.name': {
+      en: 'Kusari · <span class="italic">Chain</span>',
+      ru: 'Кусари · <span class="italic">Цепь</span>',
+      zh: '鎖 · <span class="italic">链</span>',
+      ja: '鎖 · <span class="italic">くさり</span>',
+      id: 'Kusari · <span class="italic">Rantai</span>',
+    },
+    'specs.type.himo.desc': {
+      en: 'Twelve-strand silk braid with aramid core. The cord absorbs energy gradually, creating a forgiving deceleration curve. Designed for daily training, flow practice, and the body that returns to the object.',
+      ru: 'Двенадцатипрядный шёлковый плёт с арамидным сердечником. Шнур поглощает энергию постепенно, создавая мягкую кривую замедления. Для ежедневных тренировок, практики потока и тела, возвращающегося к предмету.',
+      zh: '十二股丝编配芳纶芯。绳索逐步吸收能量，创造宽容的减速曲线。为日常训练、流动练习和不断回归器物的身体而设计。',
+      ja: 'アラミド芯入り十二本絹組紐。紐はエネルギーを徐々に吸収し、寛容な減速曲線を作る。日常の稽古、フロー練習、道具に戻り続ける身体のために。',
+      id: 'Anyaman sutra dua belas helai dengan inti aramid. Tali menyerap energi secara bertahap, menciptakan kurva deselerasi yang memaafkan. Dirancang untuk latihan harian, praktik aliran, dan tubuh yang kembali pada benda itu.',
+    },
+    'specs.type.kusari.desc': {
+      en: 'Seven-link forged chromoly chain with ball-bearing swivels. Zero elongation — 100% energy transfer at the endpoint. Built for Okinawan kobudo and classical combat forms where the weapon is expected to strike.',
+      ru: 'Семизвенная кованая хромомолибденовая цепь с шарикоподшипниковыми вертлюгами. Нулевое удлинение — 100% передача энергии на конечную точку. Для окинавского кобудо и классических боевых форм, где оружие должно бить.',
+      zh: '七环锻造铬钼钢链配滚珠轴承旋转环。零伸长率——100%能量传递至端点。为冲绳古武道和要求武器进行打击的古典实战形式而造。',
+      ja: 'ボールベアリングスイベル付き七リンク鍛造クロモリチェーン。伸び率ゼロ——エンドポイントへ100%のエネルギー伝達。武器が打つことを求められる沖縄古武道と古典実戦型のために。',
+      id: 'Rantai chromoly tempa tujuh mata dengan swivel bantalan bola. Perpanjangan nol — transfer energi 100% di titik akhir. Dibangun untuk kobudo Okinawa dan bentuk tempur klasik di mana senjata diharapkan memukul.',
+    },
+    'specs.type.handle': {
+      en: 'Handle', ru: 'Рукоять', zh: '柄', ja: '柄', id: 'Gagang',
+    },
+    'specs.type.connector': {
+      en: 'Connector', ru: 'Соединение', zh: '连接', ja: '接続', id: 'Konektor',
+    },
+    'specs.type.weight': {
+      en: 'Weight', ru: 'Вес', zh: '重量', ja: '重量', id: 'Berat',
+    },
+    'specs.type.impact': {
+      en: 'Impact', ru: 'Удар', zh: '冲击', ja: '衝撃', id: 'Dampak',
+    },
+    'specs.type.himo.link': {
+      en: 'Full himo specifications ↓', ru: 'Все характеристики химо ↓',
+      zh: '完整绳式参数 ↓', ja: '紐の全仕様 ↓', id: 'Spesifikasi lengkap himo ↓',
+    },
+    'specs.type.kusari.link': {
+      en: 'Full kusari specifications ↓', ru: 'Все характеристики кусари ↓',
+      zh: '完整链式参数 ↓', ja: '鎖の全仕様 ↓', id: 'Spesifikasi lengkap kusari ↓',
+    },
+    'specs.himo.section': {
+      en: '紐 Himo · Training dimensions', ru: '紐 Химо · Размеры тренировочных',
+      zh: '紐 绳 · 训练尺寸', ja: '紐 · 稽古用寸法', id: '紐 Himo · Dimensi latihan',
+    },
+
+    /* ================================================================
        KUSARI · COMBAT SERIES
        ================================================================ */
 
